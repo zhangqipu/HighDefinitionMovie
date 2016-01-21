@@ -14,8 +14,6 @@ private let specialCellHeight: Float          = 99.0
 private let videoInfoCellHeight: Float        = 264.0
 private let rankDetailCellHeight: Float       = 44.0
 
-private let TableViewCellRankDetail: String   = "TableViewCellRankDetail"
-
 class HomePageViewController:
     UIViewController,
     UITableViewDataSource,
@@ -92,7 +90,6 @@ class HomePageViewController:
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         // Do any additional setup after loading the view .
         let historyButton           = UIButton(frame: CGRectMake(0, 0, 20, 20))
         let historyButtonItem       = UIBarButtonItem(customView: historyButton)
@@ -123,7 +120,7 @@ class HomePageViewController:
 
     func requestHtml() {
         let request = NSMutableURLRequest.init(URL: NSURL.init(
-            string: "http://hd.c.jinerkan.com/v3/client/video")!)
+            string: Interface.HomeAPI)!)
         
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {
             (response, data, error) -> Void in
@@ -144,7 +141,7 @@ class HomePageViewController:
             self.imageSources.insertObject(specialInfo![2], atIndex: 11)
             self.imageSources.insertObject(specialInfo![3], atIndex: 14)
             
-//            self.tableView.reloadData()
+            self.tableView.reloadData()
         }
         
     }
@@ -157,42 +154,36 @@ class HomePageViewController:
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell:UITableViewCell?
-        if (tableView.tag == 0) {
-            cell = tableView.dequeueReusableCellWithIdentifier(cellIds[indexPath.row] as! String)
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIds[indexPath.row] as! String)
+        
+        if (indexPath.row > 0) {
+            (cell as! TableViewCell).collectionCellId = collectionCellIds[indexPath.row] as! String
             
-            if (indexPath.row > 0) {
-                (cell as! TableViewCell).collectionCellId = collectionCellIds[indexPath.row] as! String
+            if (imageSources.count > 0) {
+                if (indexPath.row == 5) {
+                    (cell as! TableViewCell).imageSoures = self.imageSources[indexPath.row]
+                        as! Array<Array<Dictionary<String, String>>>
+                    (cell as! TableViewCell).collectionView.reloadData()
 
-                if (imageSources.count > 0) {
-                    if (indexPath.row == 5) {
-                        
-                    } else {
-                        (cell as! TableViewCell).imageSoures = self.imageSources[indexPath.row]
-                            as! Array<Dictionary<String, String>>
-                        (cell as! TableViewCell).collectionView.reloadData()
-                    }
-                }
-            } else {
-                if (imageSources.count > 0) {
-                    (cell as! BannerTableViewCell).imageSoures = self.imageSources[0]
+                } else {
+                    (cell as! TableViewCell).imageSoures = self.imageSources[indexPath.row]
                         as! Array<Dictionary<String, String>>
-                    (cell as! BannerTableViewCell).configImages()
+                    (cell as! TableViewCell).collectionView.reloadData()
                 }
             }
         } else {
-            cell = tableView.dequeueReusableCellWithIdentifier(TableViewCellRankDetail)
+            if (imageSources.count > 0) {
+                (cell as! BannerTableViewCell).imageSoures = self.imageSources[0]
+                    as! Array<Dictionary<String, String>>
+                (cell as! BannerTableViewCell).configImages()
+            }
         }
         
         return cell!
     }
-    
+
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if (tableView.tag == 0) {
-            return CGFloat(cellHeights[indexPath.row] as! NSNumber)
-        } else {
-            return CGFloat(rankDetailCellHeight)
-        }
+        return CGFloat(cellHeights[indexPath.row] as! NSNumber)
     }
     
     /*

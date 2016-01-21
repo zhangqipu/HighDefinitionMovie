@@ -21,13 +21,14 @@ class XmlDataParser: NSObject {
             if (e1.raw != nil) {
                 let attbutes: Dictionary = e1.attributes
                 let title: String        = String(attbutes["data-name"])
-                var url: String          = String(String(attbutes["style"]))
+                var url: String          = String(attbutes["style"])
+                let ID: String           = String(attbutes["data-id"])
                 let startIdx             = url.startIndex.advancedBy(30)
                 let endIdx               = url.endIndex.advancedBy(-2)
                 let range                = Range<String.Index>(start: startIdx, end: endIdx)
                 
                 url = url.substringWithRange(range)
-                let bannerDic: Dictionary = ["title": title, "url": url]
+                let bannerDic: Dictionary = ["title": title, "url": url, "id": ID]
                 
                 bannerArr.append(bannerDic)
             }

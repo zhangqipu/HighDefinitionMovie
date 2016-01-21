@@ -10,7 +10,7 @@ import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
     
-    var model: Dictionary<String, String> = Dictionary()
+    var model: Any?
     
     func configContent() {
         

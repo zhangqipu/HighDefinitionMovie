@@ -17,7 +17,11 @@ class VideoCollectionViewCell: CollectionViewCell {
     override func configContent() {
         super.configContent()
         
-        imageView.kf_setImageWithURL(NSURL.init(string: model["url"]!)!)
+        let m: Dictionary<String, String> = model as! Dictionary
+        
+        imageView.kf_setImageWithURL(NSURL.init(string: m["url"]!)!)
+        titleLabel.text = m["title"]
+        detaiLabel.text = m["info"]
     }
 
 }

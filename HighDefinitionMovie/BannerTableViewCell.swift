@@ -20,11 +20,15 @@ class BannerTableViewCell: UITableViewCell {
         // Initialization code
         
         for var i = 0; i < 5; i++ {
+            let tap               = UITapGestureRecognizer.init(target: self, action: "imageTap:")
             let imgv: UIImageView = UIImageView.init(frame: CGRectMake(
                 CGRectGetWidth(self.frame) * CGFloat(i),
                 CGRectGetMinY(self.frame),
                 CGRectGetWidth(self.frame),
                 CGRectGetHeight(self.frame)))
+            imgv.userInteractionEnabled = true
+            imgv.tag = i
+            imgv.addGestureRecognizer(tap)
             
             scrollView.addSubview(imgv)
             imageViews.addObject(imgv)
@@ -33,6 +37,22 @@ class BannerTableViewCell: UITableViewCell {
         scrollView.contentSize = CGSizeMake(5 * CGRectGetWidth(self.frame), 0)
     }
 
+    func imageTap(tap: UITapGestureRecognizer) {
+        let m: Dictionary<String, String> = imageSoures[(tap.view?.tag)!]
+        let ID = m["id"]!
+        let title = m["title"]!.stringByAddingPercentEncodingWithAllowedCharacters(
+            NSCharacterSet.URLQueryAllowedCharacterSet())
+        let request = NSMutableURLRequest.init(URL: NSURL.init(
+            string: Interface.DetailAPI + "?video_id=" + ID + "&video_name=" + title!)!)
+        
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {
+            (response, data, error) -> Void in
+            let s: String = String(data: data!, encoding: NSUTF8StringEncoding)!
+            print(s)
+
+        }
+    }
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

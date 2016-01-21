@@ -13,6 +13,6 @@ class SpecialCollectionViewCell: CollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     
     override func configContent() {
-        imageView.kf_setImageWithURL(NSURL.init(string: model["url"]!)!)
+        imageView.kf_setImageWithURL(NSURL.init(string: (model as! Dictionary)["url"]!)!)
     }
 }

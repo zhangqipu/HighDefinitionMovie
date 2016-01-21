@@ -13,7 +13,7 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var collectionCellId: String = ""
-    var imageSoures: Array<Dictionary<String, String>> = []
+    var imageSoures: Array<AnyObject> = []
 
     override func awakeFromNib() {
         super.awakeFromNib()

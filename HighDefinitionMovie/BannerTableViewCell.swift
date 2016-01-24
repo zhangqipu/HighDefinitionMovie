@@ -21,11 +21,7 @@ class BannerTableViewCell: UITableViewCell {
         
         for var i = 0; i < 5; i++ {
             let tap               = UITapGestureRecognizer.init(target: self, action: "imageTap:")
-            let imgv: UIImageView = UIImageView.init(frame: CGRectMake(
-                CGRectGetWidth(self.frame) * CGFloat(i),
-                CGRectGetMinY(self.frame),
-                CGRectGetWidth(self.frame),
-                CGRectGetHeight(self.frame)))
+            let imgv: UIImageView = UIImageView.init(frame: CGRectZero)
             imgv.userInteractionEnabled = true
             imgv.tag = i
             imgv.addGestureRecognizer(tap)
@@ -74,15 +70,13 @@ class BannerTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         scrollView.contentSize = CGSizeMake(5 * CGRectGetWidth(self.frame), CGRectGetHeight(scrollView.frame))
 
-        self.contentView.translatesAutoresizingMaskIntoConstraints = false
-
         var i:Int = 0
         for imgv in imageViews {
             (imgv as! UIImageView).frame = CGRectMake(
-                CGRectGetWidth(imgv.frame) * CGFloat(i),
-                CGRectGetMinY(imgv.frame),
-                CGRectGetWidth(imgv.frame),
-                CGRectGetHeight(imgv.frame))
+                CGRectGetWidth(self.bounds) * CGFloat(i),
+                CGRectGetMinY(self.bounds),
+                CGRectGetWidth(self.bounds),
+                CGRectGetHeight(self.bounds))
             
             i++
         }

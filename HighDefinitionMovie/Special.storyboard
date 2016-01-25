@@ -5,22 +5,43 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Special View Controller-->
         <scene sceneID="9f5-FM-KTR">
             <objects>
-                <viewController storyboardIdentifier="Special" id="Nu6-jv-n2J" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Special" id="Nu6-jv-n2J" customClass="SpecialViewController" customModule="HighDefinitionMovie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wfE-KL-kH5"/>
                         <viewControllerLayoutGuide type="bottom" id="8dg-5L-InF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eC0-Gb-JG2">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView hidden="YES" contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kGb-Mc-pQz">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Nu6-jv-n2J" id="3FZ-vK-eQV"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="kGb-Mc-pQz" secondAttribute="trailing" id="Bbx-Lu-Qb7"/>
+                            <constraint firstItem="kGb-Mc-pQz" firstAttribute="leading" secondItem="eC0-Gb-JG2" secondAttribute="leading" id="MA5-Pn-7Ep"/>
+                            <constraint firstItem="kGb-Mc-pQz" firstAttribute="bottom" secondItem="8dg-5L-InF" secondAttribute="top" id="O95-lH-BQa"/>
+                            <constraint firstItem="kGb-Mc-pQz" firstAttribute="top" secondItem="eC0-Gb-JG2" secondAttribute="top" id="YXl-Ua-Lnm"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="webView" destination="kGb-Mc-pQz" id="T9g-Il-q9c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eUy-Nh-RQs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="380" y="228"/>
+            <point key="canvasLocation" x="379.5" y="227.5"/>
         </scene>
     </scenes>
 </document>

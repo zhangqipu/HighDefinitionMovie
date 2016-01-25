@@ -143,4 +143,8 @@ class XmlDataParser: NSObject {
         return rankArray
     }
 
+    func parseSpecialList(xmlData: NSData) {
+        let hpple = TFHpple.init(HTMLData: xmlData)
+        
+    }
 }

@@ -3,6 +3,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Classify View Controller-->
@@ -14,13 +17,397 @@
                         <viewControllerLayoutGuide type="bottom" id="SWz-EN-jwM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9VH-DH-rMH">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BRo-im-LhJ">
+                                <rect key="frame" x="0.0" y="299" width="368" height="276"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y1Y-Rf-tUk">
+                                        <rect key="frame" x="0.0" y="0.0" width="92" height="92"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="y1Y-Rf-tUk" secondAttribute="height" multiplier="1:1" id="jX1-Gc-0K7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <inset key="titleEdgeInsets" minX="-40" minY="52" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="16" minY="-18" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="排行榜" image="top.png"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j3s-RI-wen">
+                                        <rect key="frame" x="92" y="0.0" width="92" height="92"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <inset key="titleEdgeInsets" minX="-40" minY="52" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="16" minY="-18" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="好莱坞" image="Hollywood.png"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCJ-2u-z5a">
+                                        <rect key="frame" x="184" y="0.0" width="92" height="92"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <inset key="titleEdgeInsets" minX="-40" minY="52" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="16" minY="-18" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="国内院线" image="neidi_top.png"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qgv-K0-aHT">
+                                        <rect key="frame" x="276" y="0.0" width="92" height="92"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <inset key="titleEdgeInsets" minX="-40" minY="52" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="16" minY="-18" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="内地剧" image="guochan.png"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mbz-9J-VCq">
+                                        <rect key="frame" x="0.0" y="92" width="92" height="92"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <inset key="titleEdgeInsets" minX="-40" minY="52" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="16" minY="-18" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="美国剧" image="meiju.png"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDR-TH-OaW">
+                                        <rect key="frame" x="92" y="92" width="92" height="92"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <inset key="titleEdgeInsets" minX="-40" minY="52" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="16" minY="-18" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="英国剧" image="yingju.png"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tO5-OF-dzV">
+                                        <rect key="frame" x="184" y="92" width="92" height="92"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <inset key="titleEdgeInsets" minX="-40" minY="52" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="16" minY="-18" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="韩国剧" image="rihan.png"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F9T-kV-CQY">
+                                        <rect key="frame" x="276" y="92" width="92" height="92"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <inset key="titleEdgeInsets" minX="-40" minY="52" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="16" minY="-18" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="日本剧" image="riju.png"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W93-tn-kpg">
+                                        <rect key="frame" x="0.0" y="184" width="92" height="92"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <inset key="titleEdgeInsets" minX="-40" minY="52" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="16" minY="-18" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="香港剧" image="tvb.png"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o7T-0c-I55">
+                                        <rect key="frame" x="92" y="184" width="92" height="92"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <inset key="titleEdgeInsets" minX="-40" minY="52" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="16" minY="-18" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="台湾剧" image="taiwan.png"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSi-aX-6DH">
+                                        <rect key="frame" x="184" y="184" width="92" height="92"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <inset key="titleEdgeInsets" minX="-40" minY="52" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="16" minY="-18" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="泰国剧" image="taiguo.png"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="riA-SO-rWB">
+                                        <rect key="frame" x="276" y="184" width="92" height="92"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <inset key="titleEdgeInsets" minX="-40" minY="52" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="16" minY="-18" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="动画片" image="erge.png"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Qgv-K0-aHT" firstAttribute="height" secondItem="rCJ-2u-z5a" secondAttribute="height" id="0fd-pJ-9LO"/>
+                                    <constraint firstItem="vSi-aX-6DH" firstAttribute="height" secondItem="o7T-0c-I55" secondAttribute="height" id="0gG-Bl-fbQ"/>
+                                    <constraint firstItem="y1Y-Rf-tUk" firstAttribute="width" secondItem="BRo-im-LhJ" secondAttribute="width" multiplier="1:4" id="0kg-Sr-9TK"/>
+                                    <constraint firstItem="vSi-aX-6DH" firstAttribute="top" secondItem="tO5-OF-dzV" secondAttribute="bottom" id="16f-9t-uP3"/>
+                                    <constraint firstItem="riA-SO-rWB" firstAttribute="height" secondItem="vSi-aX-6DH" secondAttribute="height" id="1hv-sH-7al"/>
+                                    <constraint firstItem="rCJ-2u-z5a" firstAttribute="height" secondItem="j3s-RI-wen" secondAttribute="height" id="447-gl-oGI"/>
+                                    <constraint firstItem="j3s-RI-wen" firstAttribute="width" secondItem="y1Y-Rf-tUk" secondAttribute="width" id="45Q-Ce-qfc"/>
+                                    <constraint firstItem="riA-SO-rWB" firstAttribute="leading" secondItem="vSi-aX-6DH" secondAttribute="trailing" id="4ZK-cs-g9d"/>
+                                    <constraint firstItem="j3s-RI-wen" firstAttribute="top" secondItem="BRo-im-LhJ" secondAttribute="top" id="5o2-ae-4Jf"/>
+                                    <constraint firstItem="Qgv-K0-aHT" firstAttribute="top" secondItem="BRo-im-LhJ" secondAttribute="top" id="5yJ-j0-HXq"/>
+                                    <constraint firstItem="Mbz-9J-VCq" firstAttribute="height" secondItem="y1Y-Rf-tUk" secondAttribute="height" id="73n-DM-Itd"/>
+                                    <constraint firstItem="Qgv-K0-aHT" firstAttribute="width" secondItem="rCJ-2u-z5a" secondAttribute="width" id="8Jk-Dy-ATu"/>
+                                    <constraint firstItem="Mbz-9J-VCq" firstAttribute="top" secondItem="y1Y-Rf-tUk" secondAttribute="bottom" id="9Xu-2O-StA"/>
+                                    <constraint firstItem="tO5-OF-dzV" firstAttribute="leading" secondItem="YDR-TH-OaW" secondAttribute="trailing" id="BPJ-HI-ymy"/>
+                                    <constraint firstItem="tO5-OF-dzV" firstAttribute="top" secondItem="rCJ-2u-z5a" secondAttribute="bottom" id="G2F-2j-Pbo"/>
+                                    <constraint firstItem="W93-tn-kpg" firstAttribute="height" secondItem="Mbz-9J-VCq" secondAttribute="height" id="Gac-OB-9CH"/>
+                                    <constraint firstItem="Mbz-9J-VCq" firstAttribute="width" secondItem="y1Y-Rf-tUk" secondAttribute="width" id="Hey-jU-Q0m"/>
+                                    <constraint firstItem="rCJ-2u-z5a" firstAttribute="top" secondItem="BRo-im-LhJ" secondAttribute="top" id="Hhb-3g-HGq"/>
+                                    <constraint firstItem="YDR-TH-OaW" firstAttribute="height" secondItem="Mbz-9J-VCq" secondAttribute="height" id="LNF-Jx-JBh"/>
+                                    <constraint firstItem="riA-SO-rWB" firstAttribute="width" secondItem="vSi-aX-6DH" secondAttribute="width" id="MBw-JR-UMD"/>
+                                    <constraint firstItem="riA-SO-rWB" firstAttribute="top" secondItem="F9T-kV-CQY" secondAttribute="bottom" id="NzU-s2-CiI"/>
+                                    <constraint firstItem="o7T-0c-I55" firstAttribute="height" secondItem="W93-tn-kpg" secondAttribute="height" id="O7d-rz-UoI"/>
+                                    <constraint firstItem="W93-tn-kpg" firstAttribute="leading" secondItem="BRo-im-LhJ" secondAttribute="leading" id="TPX-nS-xx1"/>
+                                    <constraint firstItem="o7T-0c-I55" firstAttribute="top" secondItem="YDR-TH-OaW" secondAttribute="bottom" id="Ttw-Kl-CKu"/>
+                                    <constraint firstItem="o7T-0c-I55" firstAttribute="width" secondItem="W93-tn-kpg" secondAttribute="width" id="ZIB-Hc-aJ0"/>
+                                    <constraint firstItem="y1Y-Rf-tUk" firstAttribute="top" secondItem="BRo-im-LhJ" secondAttribute="top" id="ahK-mm-otD"/>
+                                    <constraint firstItem="YDR-TH-OaW" firstAttribute="leading" secondItem="Mbz-9J-VCq" secondAttribute="trailing" id="c5l-ar-SGg"/>
+                                    <constraint firstItem="Qgv-K0-aHT" firstAttribute="leading" secondItem="rCJ-2u-z5a" secondAttribute="trailing" id="cFc-jF-MQQ"/>
+                                    <constraint firstItem="W93-tn-kpg" firstAttribute="top" secondItem="Mbz-9J-VCq" secondAttribute="bottom" id="fWi-KE-ir7"/>
+                                    <constraint firstItem="F9T-kV-CQY" firstAttribute="width" secondItem="tO5-OF-dzV" secondAttribute="width" id="fuM-X0-xXu"/>
+                                    <constraint firstItem="rCJ-2u-z5a" firstAttribute="width" secondItem="j3s-RI-wen" secondAttribute="width" id="jcw-X8-8fZ"/>
+                                    <constraint firstItem="y1Y-Rf-tUk" firstAttribute="leading" secondItem="BRo-im-LhJ" secondAttribute="leading" id="kwL-iT-BOa"/>
+                                    <constraint firstItem="YDR-TH-OaW" firstAttribute="top" secondItem="j3s-RI-wen" secondAttribute="bottom" id="li4-Lt-TNH"/>
+                                    <constraint firstItem="j3s-RI-wen" firstAttribute="height" secondItem="y1Y-Rf-tUk" secondAttribute="height" id="mSy-K8-PJz"/>
+                                    <constraint firstItem="F9T-kV-CQY" firstAttribute="top" secondItem="Qgv-K0-aHT" secondAttribute="bottom" id="nDc-bj-olH"/>
+                                    <constraint firstItem="j3s-RI-wen" firstAttribute="leading" secondItem="y1Y-Rf-tUk" secondAttribute="trailing" id="ngB-bH-sc3"/>
+                                    <constraint firstItem="tO5-OF-dzV" firstAttribute="width" secondItem="YDR-TH-OaW" secondAttribute="width" id="pgZ-bb-UjV"/>
+                                    <constraint firstItem="o7T-0c-I55" firstAttribute="leading" secondItem="W93-tn-kpg" secondAttribute="trailing" id="qeb-14-q5b"/>
+                                    <constraint firstAttribute="width" secondItem="BRo-im-LhJ" secondAttribute="height" multiplier="4:3" id="qkF-aa-rTW"/>
+                                    <constraint firstItem="rCJ-2u-z5a" firstAttribute="leading" secondItem="j3s-RI-wen" secondAttribute="trailing" id="r1D-Ap-daN"/>
+                                    <constraint firstItem="F9T-kV-CQY" firstAttribute="leading" secondItem="tO5-OF-dzV" secondAttribute="trailing" id="r8U-jc-auA"/>
+                                    <constraint firstItem="Mbz-9J-VCq" firstAttribute="leading" secondItem="BRo-im-LhJ" secondAttribute="leading" id="vWm-IU-VH4"/>
+                                    <constraint firstItem="tO5-OF-dzV" firstAttribute="height" secondItem="YDR-TH-OaW" secondAttribute="height" id="xIh-qd-hAr"/>
+                                    <constraint firstItem="vSi-aX-6DH" firstAttribute="width" secondItem="o7T-0c-I55" secondAttribute="width" id="xeQ-mo-ihr"/>
+                                    <constraint firstItem="F9T-kV-CQY" firstAttribute="height" secondItem="tO5-OF-dzV" secondAttribute="height" id="xia-fy-WlN"/>
+                                    <constraint firstItem="YDR-TH-OaW" firstAttribute="width" secondItem="Mbz-9J-VCq" secondAttribute="width" id="yoL-TD-cZV"/>
+                                    <constraint firstItem="vSi-aX-6DH" firstAttribute="leading" secondItem="o7T-0c-I55" secondAttribute="trailing" id="zPD-Vb-jZC"/>
+                                    <constraint firstItem="W93-tn-kpg" firstAttribute="width" secondItem="Mbz-9J-VCq" secondAttribute="width" id="zZB-zQ-pgG"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UkK-9h-hAb">
+                                <rect key="frame" x="2" y="72" width="370" height="196"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F3U-AZ-txj">
+                                        <rect key="frame" x="0.0" y="98" width="185" height="98"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1O-wy-EL7">
+                                                <rect key="frame" x="7" y="4" width="170" height="89"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="T1O-wy-EL7" secondAttribute="height" multiplier="170:89" id="zks-HW-Sjz"/>
+                                                </constraints>
+                                                <inset key="titleEdgeInsets" minX="18" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="动漫" backgroundImage="anime.png">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="F3U-AZ-txj" secondAttribute="height" multiplier="185:98" id="7pO-So-DRW"/>
+                                            <constraint firstItem="T1O-wy-EL7" firstAttribute="centerX" secondItem="F3U-AZ-txj" secondAttribute="centerX" id="LgU-QJ-pzL"/>
+                                            <constraint firstItem="T1O-wy-EL7" firstAttribute="centerY" secondItem="F3U-AZ-txj" secondAttribute="centerY" id="czs-Lx-3bA"/>
+                                            <constraint firstItem="T1O-wy-EL7" firstAttribute="width" secondItem="F3U-AZ-txj" secondAttribute="width" multiplier="170:185" id="nPw-bh-AXA"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pgt-8Y-m6d">
+                                        <rect key="frame" x="185" y="0.0" width="185" height="98"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lP9-YS-5YD">
+                                                <rect key="frame" x="8" y="4" width="170" height="90"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="lP9-YS-5YD" secondAttribute="height" multiplier="17:9" id="4Jt-SS-MTQ"/>
+                                                </constraints>
+                                                <inset key="titleEdgeInsets" minX="18" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="电视剧" backgroundImage="tv.png">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="lP9-YS-5YD" firstAttribute="width" secondItem="pgt-8Y-m6d" secondAttribute="width" multiplier="170:185" id="F7g-Yg-eJx"/>
+                                            <constraint firstItem="lP9-YS-5YD" firstAttribute="centerY" secondItem="pgt-8Y-m6d" secondAttribute="centerY" id="aSc-Qn-nC6"/>
+                                            <constraint firstItem="lP9-YS-5YD" firstAttribute="centerX" secondItem="pgt-8Y-m6d" secondAttribute="centerX" id="hf5-2o-Iwz"/>
+                                            <constraint firstAttribute="width" secondItem="pgt-8Y-m6d" secondAttribute="height" multiplier="185:98" id="yjL-4o-FXp"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CDT-uz-um0">
+                                        <rect key="frame" x="185" y="98" width="185" height="98"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EjI-HO-eon">
+                                                <rect key="frame" x="8" y="4" width="170" height="90"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="EjI-HO-eon" secondAttribute="height" multiplier="17:9" id="WqO-cI-eV7"/>
+                                                </constraints>
+                                                <inset key="titleEdgeInsets" minX="18" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="综艺" backgroundImage="zongyi.png">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="EjI-HO-eon" firstAttribute="centerX" secondItem="CDT-uz-um0" secondAttribute="centerX" id="5L2-LP-Mbh"/>
+                                            <constraint firstAttribute="width" secondItem="CDT-uz-um0" secondAttribute="height" multiplier="185:98" id="UnZ-4l-yRe"/>
+                                            <constraint firstItem="EjI-HO-eon" firstAttribute="centerY" secondItem="CDT-uz-um0" secondAttribute="centerY" id="agq-TE-Nbl"/>
+                                            <constraint firstItem="EjI-HO-eon" firstAttribute="width" secondItem="CDT-uz-um0" secondAttribute="width" multiplier="170:185" id="kgH-Fj-LQf"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F2r-Xc-WZd">
+                                        <rect key="frame" x="0.0" y="0.0" width="185" height="98"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AjG-Yh-hjs">
+                                                <rect key="frame" x="7" y="4" width="170" height="89"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="AjG-Yh-hjs" secondAttribute="height" multiplier="17:9" id="Ip5-qn-bS4"/>
+                                                </constraints>
+                                                <inset key="titleEdgeInsets" minX="18" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="电影" backgroundImage="movie.png">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="AjG-Yh-hjs" firstAttribute="centerY" secondItem="F2r-Xc-WZd" secondAttribute="centerY" id="Gs9-5i-FBg"/>
+                                            <constraint firstItem="AjG-Yh-hjs" firstAttribute="centerX" secondItem="F2r-Xc-WZd" secondAttribute="centerX" id="WsE-9y-jdY"/>
+                                            <constraint firstItem="AjG-Yh-hjs" firstAttribute="width" secondItem="F2r-Xc-WZd" secondAttribute="width" multiplier="170:185" id="gzc-EH-wNo"/>
+                                            <constraint firstAttribute="width" secondItem="F2r-Xc-WZd" secondAttribute="height" multiplier="185:98" id="zQU-G8-IRJ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="CDT-uz-um0" firstAttribute="leading" secondItem="F3U-AZ-txj" secondAttribute="trailing" id="7kx-LY-eKw"/>
+                                    <constraint firstItem="F2r-Xc-WZd" firstAttribute="leading" secondItem="UkK-9h-hAb" secondAttribute="leading" id="FuN-Wo-ZnG"/>
+                                    <constraint firstItem="F3U-AZ-txj" firstAttribute="width" secondItem="F2r-Xc-WZd" secondAttribute="width" id="I7M-6W-KcN"/>
+                                    <constraint firstItem="CDT-uz-um0" firstAttribute="width" secondItem="CDT-uz-um0" secondAttribute="height" multiplier="185:98" id="Jmp-4E-oxb"/>
+                                    <constraint firstItem="pgt-8Y-m6d" firstAttribute="leading" secondItem="F2r-Xc-WZd" secondAttribute="trailing" id="LvA-nq-mdB"/>
+                                    <constraint firstItem="pgt-8Y-m6d" firstAttribute="width" secondItem="pgt-8Y-m6d" secondAttribute="height" multiplier="185:98" id="QVy-ZO-4Qp"/>
+                                    <constraint firstItem="F2r-Xc-WZd" firstAttribute="width" secondItem="UkK-9h-hAb" secondAttribute="width" multiplier="1:2" id="RNc-JK-vJq"/>
+                                    <constraint firstItem="pgt-8Y-m6d" firstAttribute="top" secondItem="UkK-9h-hAb" secondAttribute="top" id="Rwp-Ye-0hj"/>
+                                    <constraint firstItem="CDT-uz-um0" firstAttribute="width" secondItem="F3U-AZ-txj" secondAttribute="width" id="WPt-8f-pEV"/>
+                                    <constraint firstItem="F3U-AZ-txj" firstAttribute="width" secondItem="F3U-AZ-txj" secondAttribute="height" multiplier="185:98" id="Wce-h9-Jfg"/>
+                                    <constraint firstItem="pgt-8Y-m6d" firstAttribute="width" secondItem="F2r-Xc-WZd" secondAttribute="width" id="izl-Jt-T2r"/>
+                                    <constraint firstItem="F2r-Xc-WZd" firstAttribute="top" secondItem="UkK-9h-hAb" secondAttribute="top" id="lc7-at-CcR"/>
+                                    <constraint firstItem="F3U-AZ-txj" firstAttribute="top" secondItem="F2r-Xc-WZd" secondAttribute="bottom" id="n1k-IU-ctk"/>
+                                    <constraint firstItem="F3U-AZ-txj" firstAttribute="leading" secondItem="UkK-9h-hAb" secondAttribute="leading" id="sLd-Vz-hWW"/>
+                                    <constraint firstItem="CDT-uz-um0" firstAttribute="top" secondItem="pgt-8Y-m6d" secondAttribute="bottom" id="xHC-7P-cy0"/>
+                                    <constraint firstAttribute="width" secondItem="UkK-9h-hAb" secondAttribute="height" multiplier="185:98" id="ymF-V6-NfQ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="UkK-9h-hAb" secondAttribute="trailing" constant="2" id="4Ai-7p-IGN"/>
+                            <constraint firstItem="BRo-im-LhJ" firstAttribute="top" secondItem="UkK-9h-hAb" secondAttribute="bottom" constant="31" id="6AL-vT-dOX"/>
+                            <constraint firstItem="UkK-9h-hAb" firstAttribute="top" secondItem="JuI-ZW-e5J" secondAttribute="bottom" constant="8" id="Akf-Fa-psA"/>
+                            <constraint firstItem="UkK-9h-hAb" firstAttribute="leading" secondItem="9VH-DH-rMH" secondAttribute="leadingMargin" constant="2" id="HvI-C7-V7e"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BRo-im-LhJ" secondAttribute="trailing" constant="-13" id="oPb-7O-VLv"/>
+                            <constraint firstItem="BRo-im-LhJ" firstAttribute="leading" secondItem="9VH-DH-rMH" secondAttribute="leadingMargin" constant="-20" id="uSb-xo-yta"/>
+                        </constraints>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
+                <view contentMode="scaleToFill" id="fRH-Y4-y5H">
+                    <rect key="frame" x="0.0" y="0.0" width="370" height="196"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EYN-95-T3X">
+                            <rect key="frame" x="0.0" y="98" width="185" height="98"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S5O-nW-dnV">
+                                    <rect key="frame" x="5" y="3" width="170" height="89"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <inset key="titleEdgeInsets" minX="18" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal" title="动漫" backgroundImage="anime.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.2156862745" green="0.96078431369999995" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="S5O-nW-dnV" firstAttribute="centerY" secondItem="EYN-95-T3X" secondAttribute="centerY" id="DCV-Qc-nS4"/>
+                                <constraint firstAttribute="width" secondItem="EYN-95-T3X" secondAttribute="height" multiplier="185:98" id="TDe-WP-nYv"/>
+                                <constraint firstItem="S5O-nW-dnV" firstAttribute="centerX" secondItem="EYN-95-T3X" secondAttribute="centerX" id="glA-lY-oSj"/>
+                                <constraint firstItem="S5O-nW-dnV" firstAttribute="width" secondItem="EYN-95-T3X" secondAttribute="width" multiplier="174:185" id="gqq-dk-kZD"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ics-Kb-PiW">
+                            <rect key="frame" x="185" y="0.0" width="185" height="98"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WHb-yR-LDt">
+                                    <rect key="frame" x="5" y="2" width="170" height="90"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <inset key="titleEdgeInsets" minX="18" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal" title="电视剧" backgroundImage="tv.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="1" green="0.34726438850000002" blue="0.35113946930000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="ics-Kb-PiW" secondAttribute="height" multiplier="185:98" id="2Ur-3D-CAP"/>
+                                <constraint firstItem="WHb-yR-LDt" firstAttribute="width" secondItem="ics-Kb-PiW" secondAttribute="width" multiplier="174:185" id="Qsa-1b-z4E"/>
+                                <constraint firstItem="WHb-yR-LDt" firstAttribute="centerX" secondItem="ics-Kb-PiW" secondAttribute="centerX" id="WFg-TZ-fNq"/>
+                                <constraint firstItem="WHb-yR-LDt" firstAttribute="centerY" secondItem="ics-Kb-PiW" secondAttribute="centerY" id="eEg-VU-I0q"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jG9-kp-P1w">
+                            <rect key="frame" x="185" y="98" width="185" height="98"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xrn-is-V7k">
+                                    <rect key="frame" x="5" y="3" width="170" height="90"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <inset key="titleEdgeInsets" minX="18" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal" title="综艺" backgroundImage="zongyi.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="xrn-is-V7k" firstAttribute="width" secondItem="jG9-kp-P1w" secondAttribute="width" multiplier="174:185" id="Hfc-sm-kBb"/>
+                                <constraint firstItem="xrn-is-V7k" firstAttribute="centerX" secondItem="jG9-kp-P1w" secondAttribute="centerX" id="V7H-tY-Nbh"/>
+                                <constraint firstAttribute="width" secondItem="jG9-kp-P1w" secondAttribute="height" multiplier="185:98" id="agj-Xx-bcT"/>
+                                <constraint firstItem="xrn-is-V7k" firstAttribute="centerY" secondItem="jG9-kp-P1w" secondAttribute="centerY" id="lIQ-6L-uRV"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hgC-Ff-fLo">
+                            <rect key="frame" x="0.0" y="0.0" width="185" height="98"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aeu-9A-pZT">
+                                    <rect key="frame" x="5" y="3" width="170" height="89"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="Aeu-9A-pZT" secondAttribute="height" multiplier="17:9" id="18v-PE-FUv"/>
+                                    </constraints>
+                                    <inset key="titleEdgeInsets" minX="18" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal" title="电影" backgroundImage="movie.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.14901960780000001" green="0.65098039220000004" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="jG9-kp-P1w" firstAttribute="leading" secondItem="EYN-95-T3X" secondAttribute="trailing" id="5wo-6q-YUH"/>
+                        <constraint firstItem="jG9-kp-P1w" firstAttribute="top" secondItem="ics-Kb-PiW" secondAttribute="bottom" id="Q54-nr-gfV"/>
+                        <constraint firstItem="ics-Kb-PiW" firstAttribute="top" secondItem="fRH-Y4-y5H" secondAttribute="top" id="QFV-cw-8Od"/>
+                        <constraint firstItem="jG9-kp-P1w" firstAttribute="width" secondItem="EYN-95-T3X" secondAttribute="width" id="Qv9-FA-xtm"/>
+                        <constraint firstAttribute="width" secondItem="fRH-Y4-y5H" secondAttribute="height" multiplier="185:98" id="WgD-xj-Gl1"/>
+                        <constraint firstItem="EYN-95-T3X" firstAttribute="width" secondItem="EYN-95-T3X" secondAttribute="height" multiplier="185:98" id="Xat-mX-4vQ"/>
+                        <constraint firstItem="EYN-95-T3X" firstAttribute="leading" secondItem="fRH-Y4-y5H" secondAttribute="leading" id="bQQ-rj-PJ3"/>
+                        <constraint firstItem="jG9-kp-P1w" firstAttribute="width" secondItem="jG9-kp-P1w" secondAttribute="height" multiplier="185:98" id="iYq-j7-phy"/>
+                        <constraint firstItem="ics-Kb-PiW" firstAttribute="width" secondItem="ics-Kb-PiW" secondAttribute="height" multiplier="185:98" id="yqY-Ti-6gw"/>
+                    </constraints>
+                </view>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9lF-GH-g0c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="432" y="302"/>
+            <point key="canvasLocation" x="375.5" y="-50.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Hollywood.png" width="44" height="44"/>
+        <image name="anime.png" width="170" height="90"/>
+        <image name="erge.png" width="44" height="44"/>
+        <image name="guochan.png" width="44" height="44"/>
+        <image name="meiju.png" width="44" height="44"/>
+        <image name="movie.png" width="170" height="90"/>
+        <image name="neidi_top.png" width="44" height="44"/>
+        <image name="rihan.png" width="44" height="44"/>
+        <image name="riju.png" width="44" height="44"/>
+        <image name="taiguo.png" width="44" height="44"/>
+        <image name="taiwan.png" width="44" height="44"/>
+        <image name="top.png" width="44" height="44"/>
+        <image name="tv.png" width="170" height="90"/>
+        <image name="tvb.png" width="44" height="44"/>
+        <image name="yingju.png" width="44" height="44"/>
+        <image name="zongyi.png" width="170" height="90"/>
+    </resources>
 </document>

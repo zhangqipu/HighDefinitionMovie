@@ -125,8 +125,8 @@ class HomePageViewController:
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {
             (response, data, error) -> Void in
             
-            let xmlString: String = String(data: data!, encoding: NSUTF8StringEncoding)!
-            print(xmlString)
+//            let xmlString: String = String(data: data!, encoding: NSUTF8StringEncoding)!
+//            print(xmlString)
             
             let bannerInfo        = self.xmlDataParser?.parseBanaerInfo(data!)
             let scrollerInfo      = self.xmlDataParser?.parseScrollerInfo(data!)

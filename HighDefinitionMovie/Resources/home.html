@@ -1,0 +1,2379 @@
+<!DOCTYPE html>
+<!-- <html><head><title></title></head><body></body></html> -->
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript">
+    (window.NREUM || (NREUM = {})).loader_config = {
+      xpid: "VQYPUFFTDRAIUFdTAAYC"
+    };
+    window.NREUM || (NREUM = {}), __nr_require = function(t, e, n) {
+      function r(n) {
+        if (!e[n]) {
+          var o = e[n] = {
+            exports: {}
+          };
+          t[n][0].call(o.exports, function(e) {
+            var o = t[n][1][e];
+            return r(o || e)
+          }, o, o.exports)
+        }
+        return e[n].exports
+      }
+      if ("function" == typeof __nr_require) return __nr_require;
+      for (var o = 0; o < n.length; o++) r(n[o]);
+      return r
+    }({
+      QJf3ax: [function(t, e) {
+        function n(t) {
+          function e(e, n, a) {
+            t && t(e, n, a), a || (a = {});
+            for (var c = s(e), f = c.length, u = i(a, o, r), d = 0; f > d; d++) c[d].apply(u, n);
+            return u
+          }
+
+          function a(t, e) {
+            f[t] = s(t).concat(e)
+          }
+
+          function s(t) {
+            return f[t] || []
+          }
+
+          function c() {
+            return n(e)
+          }
+          var f = {};
+          return {
+            on: a,
+            emit: e,
+            create: c,
+            listeners: s,
+            _events: f
+          }
+        }
+
+        function r() {
+          return {}
+        }
+        var o = "nr@context",
+          i = t("gos");
+        e.exports = n()
+      }, {
+        gos: "7eSDFh"
+      }],
+      ee: [function(t, e) {
+        e.exports = t("QJf3ax")
+      }, {}],
+      3: [function(t) {
+        function e(t) {
+          try {
+            i.console && console.log(t)
+          } catch (e) {}
+        }
+        var n, r = t("ee"),
+          o = t(1),
+          i = {};
+        try {
+          n = localStorage.getItem("__nr_flags").split(","), console && "function" == typeof console.log && (i.console = !0, -1 !== n.indexOf("dev") && (i.dev = !0), -1 !== n.indexOf("nr_dev") && (i.nrDev = !0))
+        } catch (a) {}
+        i.nrDev && r.on("internal-error", function(t) {
+          e(t.stack)
+        }), i.dev && r.on("fn-err", function(t, n, r) {
+          e(r.stack)
+        }), i.dev && (e("NR AGENT IN DEVELOPMENT MODE"), e("flags: " + o(i, function(t) {
+          return t
+        }).join(", ")))
+      }, {
+        1: 24,
+        ee: "QJf3ax"
+      }],
+      4: [function(t) {
+        function e(t, e, n, i, s) {
+          try {
+            c ? c -= 1 : r("err", [s || new UncaughtException(t, e, n)])
+          } catch (f) {
+            try {
+              r("ierr", [f, (new Date).getTime(), !0])
+            } catch (u) {}
+          }
+          return "function" == typeof a ? a.apply(this, o(arguments)) : !1
+        }
+
+        function UncaughtException(t, e, n) {
+          this.message = t || "Uncaught error with no additional information", this.sourceURL = e, this.line = n
+        }
+
+        function n(t) {
+          r("err", [t, (new Date).getTime()])
+        }
+        var r = t("handle"),
+          o = t(6),
+          i = t("ee"),
+          a = window.onerror,
+          s = !1,
+          c = 0;
+        t("loader").features.err = !0, t(5), window.onerror = e;
+        try {
+          throw new Error
+        } catch (f) {
+          "stack" in f && (t(1), t(2), "addEventListener" in window && t(3), window.XMLHttpRequest && XMLHttpRequest.prototype && XMLHttpRequest.prototype.addEventListener && window.XMLHttpRequest && XMLHttpRequest.prototype &&
+            XMLHttpRequest.prototype.addEventListener && !/CriOS/.test(navigator.userAgent) && t(4), s = !0)
+        }
+        i.on("fn-start", function() {
+          s && (c += 1)
+        }), i.on("fn-err", function(t, e, r) {
+          s && (this.thrown = !0, n(r))
+        }), i.on("fn-end", function() {
+          s && !this.thrown && c > 0 && (c -= 1)
+        }), i.on("internal-error", function(t) {
+          r("ierr", [t, (new Date).getTime(), !0])
+        })
+      }, {
+        1: 11,
+        2: 10,
+        3: 8,
+        4: 12,
+        5: 3,
+        6: 25,
+        ee: "QJf3ax",
+        handle: "D5DuLP",
+        loader: "G9z0Bl"
+      }],
+      5: [function(t) {
+        if (window.addEventListener) {
+          var e = t("handle"),
+            n = t("ee");
+          t(1), window.addEventListener("click", function() {
+            e("inc", ["ck"])
+          }, !1), window.addEventListener("hashchange", function() {
+            e("inc", ["hc"])
+          }, !1), n.on("pushState-start", function() {
+            e("inc", ["ps"])
+          })
+        }
+      }, {
+        1: 9,
+        ee: "QJf3ax",
+        handle: "D5DuLP"
+      }],
+      6: [function(t) {
+        t("loader").features.ins = !0
+      }, {
+        loader: "G9z0Bl"
+      }],
+      7: [function(t) {
+        function e() {}
+        if (window.performance && window.performance.timing && window.performance.getEntriesByType) {
+          var n = t("ee"),
+            r = t("handle"),
+            o = t(1),
+            i = t(2);
+          t("loader").features.stn = !0, t(3);
+          var a = Event;
+          n.on("fn-start", function(t) {
+            var e = t[0];
+            e instanceof a && (this.bstStart = Date.now())
+          }), n.on("fn-end", function(t, e) {
+            var n = t[0];
+            n instanceof a && r("bst", [n, e, this.bstStart, Date.now()])
+          }), o.on("fn-start", function(t, e, n) {
+            this.bstStart = Date.now(), this.bstType = n
+          }), o.on("fn-end", function(t, e) {
+            r("bstTimer", [e, this.bstStart, Date.now(), this.bstType])
+          }), i.on("fn-start", function() {
+            this.bstStart = Date.now()
+          }), i.on("fn-end", function(t, e) {
+            r("bstTimer", [e, this.bstStart, Date.now(), "requestAnimationFrame"])
+          }), n.on("pushState-start", function() {
+            this.time = Date.now(), this.startPath = location.pathname + location.hash
+          }), n.on("pushState-end", function() {
+            r("bstHist", [location.pathname + location.hash, this.startPath, this.time])
+          }), "addEventListener" in window.performance && (window.performance.addEventListener("webkitresourcetimingbufferfull", function() {
+            r("bstResource", [window.performance.getEntriesByType("resource")]), window.performance.webkitClearResourceTimings()
+          }, !1), window.performance.addEventListener("resourcetimingbufferfull", function() {
+            r("bstResource", [window.performance.getEntriesByType("resource")]), window.performance.clearResourceTimings()
+          }, !1)), document.addEventListener("scroll", e, !1), document.addEventListener("keypress", e, !1), document.addEventListener("click", e, !1)
+        }
+      }, {
+        1: 11,
+        2: 10,
+        3: 9,
+        ee: "QJf3ax",
+        handle: "D5DuLP",
+        loader: "G9z0Bl"
+      }],
+      8: [function(t, e) {
+        function n(t) {
+          i.inPlace(t, ["addEventListener", "removeEventListener"], "-", r)
+        }
+
+        function r(t) {
+          return t[1]
+        }
+        var o = t("ee").create(),
+          i = t(1)(o),
+          a = t("gos");
+        if (e.exports = o, n(window), "getPrototypeOf" in Object) {
+          for (var s = document; s && !s.hasOwnProperty("addEventListener");) s = Object.getPrototypeOf(s);
+          s && n(s);
+          for (var c = XMLHttpRequest.prototype; c && !c.hasOwnProperty("addEventListener");) c = Object.getPrototypeOf(c);
+          c && n(c)
+        } else XMLHttpRequest.prototype.hasOwnProperty("addEventListener") && n(XMLHttpRequest.prototype);
+        o.on("addEventListener-start", function(t, e) {
+          function n() {
+            return s
+          }
+          if (t[1]) {
+            var r = t[1];
+            if ("function" == typeof r) {
+              var s = a(r, "nr@wrapped", function() {
+                return i(r, "fn-", n, r.name || "anonymous")
+              });
+              this.wrapped = t[1] = s, o.emit("initEventContext", [t, e], this.wrapped)
+            } else "function" == typeof r.handleEvent && i.inPlace(r, ["handleEvent"], "fn-")
+          }
+        }), o.on("removeEventListener-start", function(t) {
+          var e = this.wrapped;
+          e && (t[1] = e)
+        })
+      }, {
+        1: 26,
+        ee: "QJf3ax",
+        gos: "7eSDFh"
+      }],
+      9: [function(t, e) {
+        var n = t("ee").create(),
+          r = t(1)(n);
+        e.exports = n, r.inPlace(window.history, ["pushState", "replaceState"], "-")
+      }, {
+        1: 26,
+        ee: "QJf3ax"
+      }],
+      10: [function(t, e) {
+        var n = t("ee").create(),
+          r = t(1)(n);
+        e.exports = n, r.inPlace(window, ["requestAnimationFrame", "mozRequestAnimationFrame", "webkitRequestAnimationFrame", "msRequestAnimationFrame"], "raf-"), n.on("raf-start", function(t) {
+          t[0] = r(t[0], "fn-")
+        })
+      }, {
+        1: 26,
+        ee: "QJf3ax"
+      }],
+      11: [function(t, e) {
+        function n(t, e, n) {
+          t[0] = i(t[0], "fn-", null, n)
+        }
+
+        function r(t, e, n) {
+          function r() {
+            return a
+          }
+          this.ctx = {};
+          var a = {
+            "nr@context": this.ctx
+          };
+          o.emit("initTimerContext", [t, n], a), t[0] = i(t[0], "fn-", r, n)
+        }
+        var o = t("ee").create(),
+          i = t(1)(o);
+        e.exports = o, i.inPlace(window, ["setTimeout", "setImmediate"], "setTimer-"), i.inPlace(window, ["setInterval"], "setInterval-"), i.inPlace(window, ["clearTimeout", "clearImmediate"], "clearTimeout-"), o.on("setInterval-start", n),
+          o.on("setTimer-start", r)
+      }, {
+        1: 26,
+        ee: "QJf3ax"
+      }],
+      12: [function(t, e) {
+        function n() {
+          f.inPlace(this, p, "fn-", o)
+        }
+
+        function r(t, e) {
+          f.inPlace(e, ["onreadystatechange"], "fn-")
+        }
+
+        function o(t, e) {
+          return e
+        }
+
+        function i(t, e) {
+          for (var n in t) e[n] = t[n];
+          return e
+        }
+        var a = t("ee").create(),
+          s = t(1),
+          c = t(2),
+          f = c(a),
+          u = c(s),
+          d = window.XMLHttpRequest,
+          p = ["onload", "onerror", "onabort", "onloadstart", "onloadend", "onprogress", "ontimeout"];
+        e.exports = a, window.XMLHttpRequest = function(t) {
+          var e = new d(t);
+          try {
+            a.emit("new-xhr", [], e), e.hasOwnProperty("addEventListener") && u.inPlace(e, ["addEventListener", "removeEventListener"], "-", o), e.addEventListener("readystatechange", n, !1)
+          } catch (r) {
+            try {
+              a.emit("internal-error", [r])
+            } catch (i) {}
+          }
+          return e
+        }, i(d, XMLHttpRequest), XMLHttpRequest.prototype = d.prototype, f.inPlace(XMLHttpRequest.prototype, ["open", "send"], "-xhr-", o), a.on("send-xhr-start", r), a.on("open-xhr-start", r)
+      }, {
+        1: 8,
+        2: 26,
+        ee: "QJf3ax"
+      }],
+      13: [function(t) {
+        function e(t) {
+          var e = this.params,
+            r = this.metrics;
+          if (!this.ended) {
+            this.ended = !0;
+            for (var i = 0; c > i; i++) t.removeEventListener(s[i], this.listener, !1);
+            if (!e.aborted) {
+              if (r.duration = (new Date).getTime() - this.startTime, 4 === t.readyState) {
+                e.status = t.status;
+                var a = t.responseType,
+                  f = "arraybuffer" === a || "blob" === a || "json" === a ? t.response : t.responseText,
+                  u = n(f);
+                if (u && (r.rxSize = u), this.sameOrigin) {
+                  var d = t.getResponseHeader("X-NewRelic-App-Data");
+                  d && (e.cat = d.split(", ").pop())
+                }
+              } else e.status = 0;
+              r.cbTime = this.cbTime, o("xhr", [e, r, this.startTime])
+            }
+          }
+        }
+
+        function n(t) {
+          if ("string" == typeof t && t.length) return t.length;
+          if ("object" != typeof t) return void 0;
+          if ("undefined" != typeof ArrayBuffer && t instanceof ArrayBuffer && t.byteLength) return t.byteLength;
+          if ("undefined" != typeof Blob && t instanceof Blob && t.size) return t.size;
+          if ("undefined" != typeof FormData && t instanceof FormData) return void 0;
+          try {
+            return JSON.stringify(t).length
+          } catch (e) {
+            return void 0
+          }
+        }
+
+        function r(t, e) {
+          var n = i(e),
+            r = t.params;
+          r.host = n.hostname + ":" + n.port, r.pathname = n.pathname, t.sameOrigin = n.sameOrigin
+        }
+        if (window.XMLHttpRequest && XMLHttpRequest.prototype && XMLHttpRequest.prototype.addEventListener && !/CriOS/.test(navigator.userAgent)) {
+          t("loader").features.xhr = !0;
+          var o = t("handle"),
+            i = t(2),
+            a = t("ee"),
+            s = ["load", "error", "abort", "timeout"],
+            c = s.length,
+            f = t(1),
+            u = window.XMLHttpRequest;
+          t(4), t(3), a.on("new-xhr", function() {
+            this.totalCbs = 0, this.called = 0, this.cbTime = 0, this.end = e, this.ended = !1, this.xhrGuids = {}
+          }), a.on("open-xhr-start", function(t) {
+            this.params = {
+              method: t[0]
+            }, r(this, t[1]), this.metrics = {}
+          }), a.on("open-xhr-end", function(t, e) {
+            "loader_config" in NREUM && "xpid" in NREUM.loader_config && this.sameOrigin && e.setRequestHeader("X-NewRelic-ID", NREUM.loader_config.xpid)
+          }), a.on("send-xhr-start", function(t, e) {
+            var r = this.metrics,
+              o = t[0],
+              i = this;
+            if (r && o) {
+              var f = n(o);
+              f && (r.txSize = f)
+            }
+            this.startTime = (new Date).getTime(), this.listener = function(t) {
+              try {
+                "abort" === t.type && (i.params.aborted = !0), ("load" !== t.type || i.called === i.totalCbs && (i.onloadCalled || "function" != typeof e.onload)) && i.end(e)
+              } catch (n) {
+                try {
+                  a.emit("internal-error", [n])
+                } catch (r) {}
+              }
+            };
+            for (var u = 0; c > u; u++) e.addEventListener(s[u], this.listener, !1)
+          }), a.on("xhr-cb-time", function(t, e, n) {
+            this.cbTime += t, e ? this.onloadCalled = !0 : this.called += 1, this.called !== this.totalCbs || !this.onloadCalled && "function" == typeof n.onload || this.end(n)
+          }), a.on("xhr-load-added", function(t, e) {
+            var n = "" + f(t) + !!e;
+            this.xhrGuids && !this.xhrGuids[n] && (this.xhrGuids[n] = !0, this.totalCbs += 1)
+          }), a.on("xhr-load-removed", function(t, e) {
+            var n = "" + f(t) + !!e;
+            this.xhrGuids && this.xhrGuids[n] && (delete this.xhrGuids[n], this.totalCbs -= 1)
+          }), a.on("addEventListener-end", function(t, e) {
+            e instanceof u && "load" === t[0] && a.emit("xhr-load-added", [t[1], t[2]], e)
+          }), a.on("removeEventListener-end", function(t, e) {
+            e instanceof u && "load" === t[0] && a.emit("xhr-load-removed", [t[1], t[2]], e)
+          }), a.on("fn-start", function(t, e, n) {
+            e instanceof u && ("onload" === n && (this.onload = !0), ("load" === (t[0] && t[0].type) || this.onload) && (this.xhrCbStart = (new Date).getTime()))
+          }), a.on("fn-end", function(t, e) {
+            this.xhrCbStart && a.emit("xhr-cb-time", [(new Date).getTime() - this.xhrCbStart, this.onload, e], e)
+          })
+        }
+      }, {
+        1: "XL7HBI",
+        2: 14,
+        3: 12,
+        4: 8,
+        ee: "QJf3ax",
+        handle: "D5DuLP",
+        loader: "G9z0Bl"
+      }],
+      14: [function(t, e) {
+        e.exports = function(t) {
+          var e = document.createElement("a"),
+            n = window.location,
+            r = {};
+          e.href = t, r.port = e.port;
+          var o = e.href.split("://");
+          return !r.port && o[1] && (r.port = o[1].split("/")[0].split("@").pop().split(":")[1]), r.port && "0" !== r.port || (r.port = "https" === o[0] ? "443" : "80"), r.hostname = e.hostname || n.hostname, r.pathname = e.pathname, r.protocol =
+            o[0], "/" !== r.pathname.charAt(0) && (r.pathname = "/" + r.pathname), r.sameOrigin = !e.hostname || e.hostname === document.domain && e.port === n.port && e.protocol === n.protocol, r
+        }
+      }, {}],
+      15: [function(t, e) {
+        function n(t) {
+          return function() {
+            r(t, [(new Date).getTime()].concat(i(arguments)))
+          }
+        }
+        var r = t("handle"),
+          o = t(1),
+          i = t(2);
+        "undefined" == typeof window.newrelic && (newrelic = window.NREUM);
+        var a = ["setPageViewName", "addPageAction", "setCustomAttribute", "finished", "addToTrace", "inlineHit", "noticeError"];
+        o(a, function(t, e) {
+          window.NREUM[e] = n("api-" + e)
+        }), e.exports = window.NREUM
+      }, {
+        1: 24,
+        2: 25,
+        handle: "D5DuLP"
+      }],
+      gos: [function(t, e) {
+        e.exports = t("7eSDFh")
+      }, {}],
+      "7eSDFh": [function(t, e) {
+        function n(t, e, n) {
+          if (r.call(t, e)) return t[e];
+          var o = n();
+          if (Object.defineProperty && Object.keys) try {
+            return Object.defineProperty(t, e, {
+              value: o,
+              writable: !0,
+              enumerable: !1
+            }), o
+          } catch (i) {}
+          return t[e] = o, o
+        }
+        var r = Object.prototype.hasOwnProperty;
+        e.exports = n
+      }, {}],
+      D5DuLP: [function(t, e) {
+        function n(t, e, n) {
+          return r.listeners(t).length ? r.emit(t, e, n) : void(r.q && (r.q[t] || (r.q[t] = []), r.q[t].push(e)))
+        }
+        var r = t("ee").create();
+        e.exports = n, n.ee = r, r.q = {}
+      }, {
+        ee: "QJf3ax"
+      }],
+      handle: [function(t, e) {
+        e.exports = t("D5DuLP")
+      }, {}],
+      XL7HBI: [function(t, e) {
+        function n(t) {
+          var e = typeof t;
+          return !t || "object" !== e && "function" !== e ? -1 : t === window ? 0 : i(t, o, function() {
+            return r++
+          })
+        }
+        var r = 1,
+          o = "nr@id",
+          i = t("gos");
+        e.exports = n
+      }, {
+        gos: "7eSDFh"
+      }],
+      id: [function(t, e) {
+        e.exports = t("XL7HBI")
+      }, {}],
+      G9z0Bl: [function(t, e) {
+        function n() {
+          var t = p.info = NREUM.info,
+            e = f.getElementsByTagName("script")[0];
+          if (t && t.licenseKey && t.applicationID && e) {
+            s(d, function(e, n) {
+              e in t || (t[e] = n)
+            });
+            var n = "https" === u.split(":")[0] || t.sslForHttp;
+            p.proto = n ? "https://" : "http://", a("mark", ["onload", i()]);
+            var r = f.createElement("script");
+            r.src = p.proto + t.agent, e.parentNode.insertBefore(r, e)
+          }
+        }
+
+        function r() {
+          "complete" === f.readyState && o()
+        }
+
+        function o() {
+          a("mark", ["domContent", i()])
+        }
+
+        function i() {
+          return (new Date).getTime()
+        }
+        var a = t("handle"),
+          s = t(1),
+          c = window,
+          f = c.document;
+        t(2);
+        var u = ("" + location).split("?")[0],
+          d = {
+            beacon: "bam.nr-data.net",
+            errorBeacon: "bam.nr-data.net",
+            agent: "js-agent.newrelic.com/nr-768.min.js"
+          },
+          p = e.exports = {
+            offset: i(),
+            origin: u,
+            features: {}
+          };
+        f.addEventListener ? (f.addEventListener("DOMContentLoaded", o, !1), c.addEventListener("load", n, !1)) : (f.attachEvent("onreadystatechange", r), c.attachEvent("onload", n)), a("mark", ["firstbyte", i()])
+      }, {
+        1: 24,
+        2: 15,
+        handle: "D5DuLP"
+      }],
+      loader: [function(t, e) {
+        e.exports = t("G9z0Bl")
+      }, {}],
+      24: [function(t, e) {
+        function n(t, e) {
+          var n = [],
+            o = "",
+            i = 0;
+          for (o in t) r.call(t, o) && (n[i] = e(o, t[o]), i += 1);
+          return n
+        }
+        var r = Object.prototype.hasOwnProperty;
+        e.exports = n
+      }, {}],
+      25: [function(t, e) {
+        function n(t, e, n) {
+          e || (e = 0), "undefined" == typeof n && (n = t ? t.length : 0);
+          for (var r = -1, o = n - e || 0, i = Array(0 > o ? 0 : o); ++r < o;) i[r] = t[e + r];
+          return i
+        }
+        e.exports = n
+      }, {}],
+      26: [function(t, e) {
+        function n(t) {
+          return !(t && "function" == typeof t && t.apply && !t[i])
+        }
+        var r = t("ee"),
+          o = t(1),
+          i = "nr@original",
+          a = Object.prototype.hasOwnProperty;
+        e.exports = function(t) {
+          function e(t, e, r, a) {
+            function nrWrapper() {
+              var n, i, s, f;
+              try {
+                i = this, n = o(arguments), s = r && r(n, i) || {}
+              } catch (d) {
+                u([d, "", [n, i, a], s])
+              }
+              c(e + "start", [n, i, a], s);
+              try {
+                return f = t.apply(i, n)
+              } catch (p) {
+                throw c(e + "err", [n, i, p], s), p
+              } finally {
+                c(e + "end", [n, i, f], s)
+              }
+            }
+            return n(t) ? t : (e || (e = ""), nrWrapper[i] = t, f(t, nrWrapper), nrWrapper)
+          }
+
+          function s(t, r, o, i) {
+            o || (o = "");
+            var a, s, c, f = "-" === o.charAt(0);
+            for (c = 0; c < r.length; c++) s = r[c], a = t[s], n(a) || (t[s] = e(a, f ? s + o : o, i, s))
+          }
+
+          function c(e, n, r) {
+            try {
+              t.emit(e, n, r)
+            } catch (o) {
+              u([o, e, n, r])
+            }
+          }
+
+          function f(t, e) {
+            if (Object.defineProperty && Object.keys) try {
+              var n = Object.keys(t);
+              return n.forEach(function(n) {
+                Object.defineProperty(e, n, {
+                  get: function() {
+                    return t[n]
+                  },
+                  set: function(e) {
+                    return t[n] = e, e
+                  }
+                })
+              }), e
+            } catch (r) {
+              u([r])
+            }
+            for (var o in t) a.call(t, o) && (e[o] = t[o]);
+            return e
+          }
+
+          function u(e) {
+            try {
+              t.emit("internal-error", e)
+            } catch (n) {}
+          }
+          return t || (t = r), e.inPlace = s, e.flag = i, e
+        }
+      }, {
+        1: 25,
+        ee: "QJf3ax"
+      }]
+    }, {}, ["G9z0Bl", 4, 13, 7, 6, 5]);
+  </script>
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <title>高清影视</title>
+  <link href="http://static.jinerkan.com/m/hd/v3/client/dist/styles/page-index.css?v=16011501" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="http://static.jinerkan.com/m/hd/v3/client/dist/scripts/libs/zepto/1.0.0/zepto.min.js"></script>
+  <script type="text/javascript" src="http://static.jinerkan.com/m/hd/v3/client/dist/scripts/libs/seajs/2.1.1/sea.js"></script>
+</head>
+
+<body>
+  <div class="pageView">
+    <div id="home-slider">
+      <div id="scroller" class="clearfix" style="width:10000px;">
+        <a class="slide " style="background-image:url(http://i12.tietuku.com/20a32de63cd9db5f.jpg)" data-id="23419" data-name="秦时明月"></a>
+        <a class="slide " style="background-image:url(http://ww2.sinaimg.cn/large/6f718fe9jw1f064dk6p4aj20sg0cn40x.jpg)" data-id="23761" data-name="冰雪星动力"></a>
+        <a class="slide " style="background-image:url(http://ww2.sinaimg.cn/large/6f718fe9jw1f04zv35xlmj20sg0cngns.jpg)" data-id="23703" data-name="天天有喜之人间有爱"></a>
+        <a class="slide " style="background-image:url(http://img2.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2304318806.jpg)" data-id="22398" data-name="跟着贝尔去冒险"></a>
+        <a class="slide " style="background-image:url(http://img2.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2308838215.jpg)" data-id="22190" data-name="大侦探福尔摩斯"></a>
+        <a class="slide ad" style="background-image:url(http://img2.moretv.com.cn/img4.douban.com/view/photo/large/public/p2302810726.jpg)" href="qisi-hd://open/window?o=%7B%22url%22%3A%22http%3A%2F%2Fum0.cn%2FQliQQ%22%2C%22t%22%3A%22%E4%BB%8A%E5%84%BF%E7%9C%8B%E5%85%AC%E4%BC%97%E5%8F%B7%E9%9A%86%E9%87%8D%E7%99%BB%E5%9C%BA%22%2C%22tc%22%3A%7B%22r%22%3A255%2C%22g%22%3A255%2C%22b%22%3A255%2C%22a%22%3A1%7D%2C%22cc%22%3A%7B%22r%22%3A255%2C%22g%22%3A255%2C%22b%22%3A255%2C%22a%22%3A1%7D%2C%22bgc%22%3A%7B%22r%22%3A38%2C%22g%22%3A3%2C%22b%22%3A104%2C%22a%22%3A1%7D%2C%22btc%22%3A%7B%22r%22%3A0%2C%22g%22%3A0%2C%22b%22%3A0%2C%22a%22%3A1%7D%2C%22or%22%3A2%2C%22ar%22%3A0%2C%22ck%22%3A1%2C%22bs%22%3A1%2C%22tbh%22%3A1%7D"
+        data-name="今儿看公众号隆重登场"></a>
+      </div>
+    </div>
+    <div class="cate-list" style="display:none;">
+      <div class="cate-head channel-list" data-target="900000189" data-filter="">
+        <div class="cate-title movie">电影</div>
+        <a data-ismore="1" data-filter="" href="javascript:void(0);" class="more">更多</a>
+      </div>
+      <div class="video-list-home">
+        <div class="scroll-wrapper">
+          <div class="scroller clearfix">
+            <a href="javascript:void(0);" class="video-item" data-video-id="2596" data-name="六颗子弹" data-score="6.2" data-cover="http://ww3.sinaimg.cn/large/6f718fe9jw1f05upxqg90j20bq0gojsm.jpg" data-runtime="2小时2分钟22秒" data-year="2012">
+              <img class="lazy-pic" data-pic="http://ww3.sinaimg.cn/large/6f718fe9jw1f05upxqg90j20bq0gojsm.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">六颗子弹</div>
+              <div class="info">打斗 场面 士兵匕首格斗技是真心赞</div>
+              <div class="score">6.2分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="406" data-name="逃出生天" data-score="6.8" data-cover="http://img5.moretv.com.cn/img3.douban.com/view/movie_poster_cover/lpst/public/p2147894527.jpg" data-runtime="1小时47分钟" data-year="2013">
+              <img class="lazy-pic" data-pic="http://img5.moretv.com.cn/img3.douban.com/view/movie_poster_cover/lpst/public/p2147894527.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">逃出生天</div>
+              <div class="info">古天乐挑战高层火灾</div>
+              <div class="score">6.8分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="398" data-name="天台" data-score="6.9" data-cover="http://ww4.sinaimg.cn/large/6f718fe9jw1f05wgjpvnpj20bn0g7q4h.jpg" data-runtime="1小时57分钟" data-year="2013">
+              <img class="lazy-pic" data-pic="http://ww4.sinaimg.cn/large/6f718fe9jw1f05wgjpvnpj20bn0g7q4h.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">天台</div>
+              <div class="info">周杰伦的歌舞江湖</div>
+              <div class="score">6.9分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="15194" data-name="枪王之王" data-score="6.6" data-cover="http://img3.moretv.com.cn/t2.baidu.com/it/u=759013284,4003504834&fm=20" data-runtime="1小时57分钟" data-year="2010">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t2.baidu.com/it/u=759013284,4003504834&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">枪王之王</div>
+              <div class="info">吴彦祖帅气枪战</div>
+              <div class="score">6.6分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="3837" data-name="英雄" data-score="6.6" data-cover="http://img3.moretv.com.cn/t3.baidu.com/it/u=3708879143,1285886328&fm=20" data-runtime="1小时33分钟" data-year="2002">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t3.baidu.com/it/u=3708879143,1285886328&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">英雄</div>
+              <div class="info">都是老戏骨 国产大片中可观之作</div>
+              <div class="score">6.6分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="612" data-name="别惹我" data-score="7.0" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/movie_poster_cover/lpst/public/p2171003423.jpg" data-runtime="1小时51分钟" data-year="2013">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/movie_poster_cover/lpst/public/p2171003423.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">别惹我</div>
+              <div class="info">这个黑帮有点囧</div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23301" data-name="触不可及" data-score="9.1" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p1222348495.jpg" data-runtime="1小时52分钟" data-year="2011">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p1222348495.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">触不可及</div>
+              <div class="info">最高雅的喜剧</div>
+              <div class="score">9.1分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="4961" data-name="超市夜未眠" data-score="7.9" data-cover="http://img3.moretv.com.cn/t2.baidu.com/it/u=1584267423,2064076306&fm=20" data-runtime="1小时42分钟" data-year="2006">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t2.baidu.com/it/u=1584267423,2064076306&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">超市夜未眠</div>
+              <div class="info">一篇描写性悸动的美文</div>
+              <div class="score">7.9分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="473" data-name="全民目击" data-score="7.6" data-cover="http://pic.moretv.com.cn//20140122/20140122125006918.jpg" data-runtime="1小时59分钟" data-year="2013">
+              <img class="lazy-pic" data-pic="http://pic.moretv.com.cn//20140122/20140122125006918.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">全民目击</div>
+              <div class="info">公堂上的斗智风暴</div>
+              <div class="score">7.6分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="5524" data-name="不归路" data-score="6.8" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2309221123.jpg" data-runtime="1小时31分钟" data-year="2009">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2309221123.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">不归路</div>
+              <div class="info">职业打手勇救落难姑娘</div>
+              <div class="score">6.8分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23638" data-name="现在这样就好" data-score="6.9" data-cover="http://img3.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2195448166.jpg" data-runtime="" data-year="2008">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2195448166.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">现在这样就好</div>
+              <div class="info">我们终要和生活和解</div>
+              <div class="score">6.9分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="21637" data-name="刺客聂隐娘" data-score="8.2" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2265054221.jpg" data-runtime="1小时44分钟" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2265054221.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">刺客聂隐娘</div>
+              <div class="info">舒淇化身高超女刺客</div>
+              <div class="score">8.2分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="279" data-name="致命黑兰" data-score="6.9" data-cover="http://pic.moretv.com.cn//20130712/20130712015021420.jpg" data-runtime="1小时48分钟" data-year="2011">
+              <img class="lazy-pic" data-pic="http://pic.moretv.com.cn//20130712/20130712015021420.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">致命黑兰</div>
+              <div class="info">阿凡达女主复仇血战</div>
+              <div class="score">6.9分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="456" data-name="我们曾经是战士" data-score="7.5" data-cover="http://img5.moretv.com.cn/img3.douban.com/lpic/s1490533.jpg" data-runtime="2小时18分钟" data-year="2002">
+              <img class="lazy-pic" data-pic="http://img5.moretv.com.cn/img3.douban.com/lpic/s1490533.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">我们曾经是战士</div>
+              <div class="info">美国的爱国主义</div>
+              <div class="score">7.5分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="895" data-name="天将雄师" data-score="6.1" data-cover="http://img3.moretv.com.cn/img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2227323135.jpg" data-runtime="2小时7分钟" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2227323135.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">天将雄师</div>
+              <div class="info">史诗巨制 场面恢弘</div>
+              <div class="score">6.1分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23688" data-name="你好，陌生人" data-score="7.7" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2309223214.jpg" data-runtime="2小时10分钟" data-year="2010">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2309223214.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">你好，陌生人</div>
+              <div class="info">爆笑韩囧开启浪漫奇缘</div>
+              <div class="score">7.7分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="483" data-name="雪国列车" data-score="7.2" data-cover="http://pic.moretv.com.cn//20140323/20140323191606552.jpg" data-runtime="2小时5分钟" data-year="2013">
+              <img class="lazy-pic" data-pic="http://pic.moretv.com.cn//20140323/20140323191606552.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">雪国列车</div>
+              <div class="info">末世车厢的反极权暴动</div>
+              <div class="score">7.2分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="189" data-name="夺宝联盟" data-score="7.1" data-cover="http://img3.moretv.com.cn/img3.douban.com/lpic/s9053553.jpg" data-runtime="2小时3分钟" data-year="2012">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/lpic/s9053553.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">夺宝联盟</div>
+              <div class="info">全智贤爆笑贼婆盗宝钻</div>
+              <div class="score">7.1分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="531" data-name="空中营救" data-score="7.5" data-cover="http://img3.moretv.com.cn/img5.douban.com/view/photo/photo/public/p2182168946.jpg" data-runtime="1小时46分钟" data-year="2014">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img5.douban.com/view/photo/photo/public/p2182168946.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">空中营救</div>
+              <div class="info">直航杀机个人秀</div>
+              <div class="score">7.5分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="3" data-name="惊天魔盗团" data-score="7.5" data-cover="http://pic.moretv.com.cn//20130718/20130718113644880.jpg" data-runtime="1小时55分钟" data-year="2013">
+              <img class="lazy-pic" data-pic="http://pic.moretv.com.cn//20130718/20130718113644880.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">惊天魔盗团</div>
+              <div class="info">魔术的神奇魅力</div>
+              <div class="score">7.5分</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cate-list special-list" style="display:none;">
+      <div class="scroller clearfix" style="width:10000px;">
+        <a class="banner-item" data-id="1111" data-name="为什么人人都爱星球大战" data-bannertype="1" data-bannersource="qisi-hd://open/window?o=%7B%22url%22%3A%22http%3A%2F%2Fum0.cn%2F3NjD8F%22%2C%22t%22%3A%22%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BA%BA%E4%BA%BA%E9%83%BD%E7%88%B1%E6%98%9F%E7%90%83%E5%A4%A7%E6%88%98%22%2C%22asl%22%3A0%2C%22nbs%22%3A1%2C%22tc%22%3A%7B%22r%22%3A255%2C%22g%22%3A255%2C%22b%22%3A255%2C%22a%22%3A1%7D%2C%22cc%22%3A%7B%22r%22%3A255%2C%22g%22%3A255%2C%22b%22%3A255%2C%22a%22%3A1%7D%2C%22rb%22%3A%7B%22t%22%3A1%2C%22v%22%3A%22share%22%7D%2C%22or%22%3A2%2C%22ar%22%3A0%2C%22ck%22%3A1%2C%22bs%22%3A1%2C%22tbh%22%3A1%7D"
+        href="qisi-hd://open/window?o=%7B%22url%22%3A%22http%3A%2F%2Fum0.cn%2F3NjD8F%22%2C%22t%22%3A%22%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BA%BA%E4%BA%BA%E9%83%BD%E7%88%B1%E6%98%9F%E7%90%83%E5%A4%A7%E6%88%98%22%2C%22asl%22%3A0%2C%22nbs%22%3A1%2C%22tc%22%3A%7B%22r%22%3A255%2C%22g%22%3A255%2C%22b%22%3A255%2C%22a%22%3A1%7D%2C%22cc%22%3A%7B%22r%22%3A255%2C%22g%22%3A255%2C%22b%22%3A255%2C%22a%22%3A1%7D%2C%22rb%22%3A%7B%22t%22%3A1%2C%22v%22%3A%22share%22%7D%2C%22or%22%3A2%2C%22ar%22%3A0%2C%22ck%22%3A1%2C%22bs%22%3A1%2C%22tbh%22%3A1%7D">
+          <img class="lazy-pic" data-pic="http://img2.moretv.com.cn/h.hiphotos.baidu.com/image/pic/item/80cb39dbb6fd526657104716ac18972bd40736fc.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></a>
+        <a data-id="230" data-name="机器人 IT'S TIME FOR YOU"><img class="lazy-pic" data-pic="http://ww2.sinaimg.cn/mw690/005JFQ3sjw1f060bqb1x7j30cr06zta0.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></a>
+        <a data-id="229" data-name="杰森.斯坦森   硬汉的魅力"><img class="lazy-pic" data-pic="http://ww4.sinaimg.cn/mw690/005JFQ3sjw1f061hjddz0j30cv0723z6.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></a>
+        <a data-id="225" data-name="莱昂纳多·迪卡普里奥 奥斯卡对你太苛刻了"><img class="lazy-pic" data-pic="http://img2.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2309307297.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></a>
+        <a data-id="201" data-name="碟中谍 系列专辑"><img class="lazy-pic" data-pic="http://ww1.sinaimg.cn/mw690/005JFQ3sjw1f060a9v2y8j30d206y75k.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></a>
+        <a data-id="187" data-name="休.杰克曼 系列影片合辑"><img class="lazy-pic" data-pic="http://img2.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2303097326.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></a>
+        <a data-id="184" data-name="囧 是一种态度"><img class="lazy-pic" data-pic="http://img2.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2303097353.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></a>
+        <a data-id="161" data-name="海盗宝藏 传说中的海上枭雄"><img class="lazy-pic" data-pic="http://img2.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2303097282.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></a>
+        <a data-id="156" data-name="穿越电影合专辑"><img class="lazy-pic" data-pic="http://img2.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2303097405.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></a>
+        <a class="banner-item" data-id="1082" data-name="《老炮儿》幕后彩蛋" data-bannertype="1" data-bannersource="qisi-hd://open/window?o=%7B%22url%22%3A%22http%3A%2F%2Fum0.cn%2F46Lr0T%22%2C%22t%22%3A%22%E3%80%8A%E8%80%81%E7%82%AE%E5%84%BF%E3%80%8B%E5%B9%95%E5%90%8E%E5%BD%A9%E8%9B%8B%22%2C%22pss%22%3A1%2C%22nbs%22%3A1%2C%22tc%22%3A%7B%22r%22%3A255%2C%22g%22%3A255%2C%22b%22%3A255%2C%22a%22%3A1%7D%2C%22bgc%22%3A%7B%22r%22%3A0%2C%22g%22%3A0%2C%22b%22%3A0%2C%22a%22%3A1%7D%2C%22cc%22%3A%7B%22r%22%3A255%2C%22g%22%3A255%2C%22b%22%3A255%2C%22a%22%3A1%7D%2C%22or%22%3A2%2C%22ar%22%3A0%2C%22ck%22%3A1%2C%22bs%22%3A1%2C%22tbh%22%3A1%7D"
+        href="qisi-hd://open/window?o=%7B%22url%22%3A%22http%3A%2F%2Fum0.cn%2F46Lr0T%22%2C%22t%22%3A%22%E3%80%8A%E8%80%81%E7%82%AE%E5%84%BF%E3%80%8B%E5%B9%95%E5%90%8E%E5%BD%A9%E8%9B%8B%22%2C%22pss%22%3A1%2C%22nbs%22%3A1%2C%22tc%22%3A%7B%22r%22%3A255%2C%22g%22%3A255%2C%22b%22%3A255%2C%22a%22%3A1%7D%2C%22bgc%22%3A%7B%22r%22%3A0%2C%22g%22%3A0%2C%22b%22%3A0%2C%22a%22%3A1%7D%2C%22cc%22%3A%7B%22r%22%3A255%2C%22g%22%3A255%2C%22b%22%3A255%2C%22a%22%3A1%7D%2C%22or%22%3A2%2C%22ar%22%3A0%2C%22ck%22%3A1%2C%22bs%22%3A1%2C%22tbh%22%3A1%7D">
+          <img class="lazy-pic" data-pic="http://img2.moretv.com.cn/img3.douban.com/view/photo/large/public/p2306161924.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></a>
+      </div>
+    </div>
+    <div class="cate-list" style="display:none;">
+      <div class="cate-head video-list" data-target="10210103" data-filter="">
+        <div class="cate-title douban">豆瓣高分榜</div>
+        <a data-ismore="0" data-filter="" href="javascript:void(0);" class="more">更多</a>
+      </div>
+      <div class="video-list-home">
+        <div class="scroll-wrapper">
+          <div class="scroller clearfix">
+            <a href="javascript:void(0);" class="video-item" data-video-id="1628" data-name="爱国者" data-score="8.1" data-cover="http://img3.moretv.com.cn/t1.baidu.com/it/u=671790859,3609489998&fm=20" data-runtime="2小时45分钟" data-year="2000">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t1.baidu.com/it/u=671790859,3609489998&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">爱国者</div>
+              <div class="info">梅尔吉布森的铁血之作</div>
+              <div class="score">8.1分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23744" data-name="水中仙" data-score="7.3" data-cover="http://ww4.sinaimg.cn/large/6f718fe9jw1f05v2ejrx7j20ci0go41f.jpg" data-runtime="1小时51分钟" data-year="2009">
+              <img class="lazy-pic" data-pic="http://ww4.sinaimg.cn/large/6f718fe9jw1f05v2ejrx7j20ci0go41f.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">水中仙</div>
+              <div class="info">就喜欢这样的爱情故事</div>
+              <div class="score">7.3分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="314" data-name="落水狗" data-score="8.2" data-cover="http://img5.moretv.com.cn/img5.douban.com/lpic/s1799689.jpg" data-runtime="1小时39分钟" data-year="1992">
+              <img class="lazy-pic" data-pic="http://img5.moretv.com.cn/img5.douban.com/lpic/s1799689.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">落水狗</div>
+              <div class="info">惊天大盗搞内讧</div>
+              <div class="score">8.2分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23528" data-name="朝圣之路" data-score="8.5" data-cover="http://img3.moretv.com.cn/img4.douban.com/view/photo/photo/public/p1551421467.jpg" data-runtime="2小时3分钟" data-year="2010">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img4.douban.com/view/photo/photo/public/p1551421467.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">朝圣之路</div>
+              <div class="info">远山、麦浪、火堆...</div>
+              <div class="score">8.5分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23463" data-name="醉乡民谣" data-score="8.0" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2172379573.jpg" data-runtime="1小时45分钟" data-year="2013">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2172379573.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">醉乡民谣</div>
+              <div class="info">一曲失败者之歌</div>
+              <div class="score">8.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="4702" data-name="撞车" data-score="8.6" data-cover="http://img3.moretv.com.cn/t1.baidu.com/it/u=2018135127,1391973012&fm=20" data-runtime="1小时52分钟" data-year="2004">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t1.baidu.com/it/u=2018135127,1391973012&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">撞车</div>
+              <div class="info">多文化洛杉矶街头</div>
+              <div class="score">8.6分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="4196" data-name="飞行家" data-score="7.8" data-cover="http://img3.moretv.com.cn/t2.baidu.com/it/u=282246685,1289605572&fm=20" data-runtime="2小时50分钟" data-year="2004">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t2.baidu.com/it/u=282246685,1289605572&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">飞行家</div>
+              <div class="info">小李子的疯狂劲儿</div>
+              <div class="score">7.8分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23687" data-name="三毛从军记" data-score="8.3" data-cover="http://img3.moretv.com.cn/www.m1905.com/uploadfile/2012/0606/20120606030441438.jpg" data-runtime="1小时30分钟" data-year="1992">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/www.m1905.com/uploadfile/2012/0606/20120606030441438.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">三毛从军记</div>
+              <div class="info">内地无厘头电影开山作</div>
+              <div class="score">8.3分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23639" data-name="嫌疑人X的献身" data-score="8.3" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2305609480.jpg" data-runtime="2小时8分钟" data-year="2008">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2305609480.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">嫌疑人X的献身</div>
+              <div class="info">那样绝望的爱此生只有一次</div>
+              <div class="score">8.3分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="10516" data-name="天国王朝" data-score="8.1" data-cover="http://img3.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2250534057.jpg" data-runtime="2小时24分钟" data-year="2005">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2250534057.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">天国王朝</div>
+              <div class="info">好莱坞史诗片最后一击</div>
+              <div class="score">8.1分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="11642" data-name="飞越疯人院" data-score="9.0" data-cover="http://pic.moretv.com.cn//20130708/20130708014111418.jpg" data-runtime="2小时13分钟" data-year="1975">
+              <img class="lazy-pic" data-pic="http://pic.moretv.com.cn//20130708/20130708014111418.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">飞越疯人院</div>
+              <div class="info">勇击乌托邦的敌人</div>
+              <div class="score">9.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="582" data-name="蝙蝠侠：黑暗骑士" data-score="8.9" data-cover="http://img2.moretv.com.cn/img3.douban.com/lpic/s3046065.jpg" data-runtime="2小时32分钟" data-year="2008">
+              <img class="lazy-pic" data-pic="http://img2.moretv.com.cn/img3.douban.com/lpic/s3046065.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">蝙蝠侠：黑暗骑士</div>
+              <div class="info">再多赞美都不为过</div>
+              <div class="score">8.9分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="308" data-name="城市之光" data-score="9.2" data-cover="http://img2.moretv.com.cn/img5.douban.com/lpic/s2700058.jpg" data-runtime="1小时27分钟" data-year="1931">
+              <img class="lazy-pic" data-pic="http://img2.moretv.com.cn/img5.douban.com/lpic/s2700058.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">城市之光</div>
+              <div class="info">卓别林式的爱情</div>
+              <div class="score">9.2分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23400" data-name="忠犬八公物语" data-score="9.0" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p1576418852.jpg" data-runtime="1小时47分钟" data-year="1987">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p1576418852.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">忠犬八公物语</div>
+              <div class="info">也想要一只秋田犬</div>
+              <div class="score">9.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="11692" data-name="机器人总动员" data-score="9.3" data-cover="http://img3.moretv.com.cn/img5.douban.com/view/photo/photo/public/p449671717.jpg" data-runtime="1小时38分钟" data-year="2008">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img5.douban.com/view/photo/photo/public/p449671717.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">机器人总动员</div>
+              <div class="info">人文主义 爱 和对环境的思考</div>
+              <div class="score">9.3分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="13309" data-name="被解救的姜戈" data-score="8.5" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2254429210.jpg" data-runtime="2小时43分钟" data-year="2012">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2254429210.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">被解救的姜戈</div>
+              <div class="info">无法无天的赏金猎人</div>
+              <div class="score">8.5分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23331" data-name="狮子王" data-score="8.8" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p1837453753.jpg" data-runtime="1小时29分钟" data-year="1994">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p1837453753.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">狮子王</div>
+              <div class="info">幸福满满的童年</div>
+              <div class="score">8.8分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="10545" data-name="穿普拉达的女王" data-score="7.9" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p735379215.jpg" data-runtime="1小时49分钟" data-year="2006">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p735379215.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">穿普拉达的女王</div>
+              <div class="info">时尚心机女魔头</div>
+              <div class="score">7.9分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23617" data-name="朱莉与朱莉娅" data-score="7.9" data-cover="http://img3.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2302712618.jpg" data-runtime="2小时3分钟" data-year="2009">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2302712618.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">朱莉与朱莉娅</div>
+              <div class="info">喜爱美食的人都是天使</div>
+              <div class="score">7.9分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23456" data-name="僵尸肖恩" data-score="7.7" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2189849741.jpg" data-runtime="1小时39分钟" data-year="2004">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2189849741.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">僵尸肖恩</div>
+              <div class="info">爆笑的恐怖片</div>
+              <div class="score">7.7分</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cate-list" style="display:none;">
+      <div class="cate-head video-list" data-target="0" data-filter="">
+        <div class="cate-title ghzs">文艺复兴</div>
+      </div>
+      <div class="video-list-home">
+        <div class="scroll-wrapper">
+          <div class="scroller clearfix">
+            <a href="javascript:void(0);" class="video-item" data-video-id="21035" data-name="一千零一夜" data-score="9.3" data-cover="http://img3.moretv.com.cn/t3.baidu.com/it/u=3049972242,2206661246&fm=20" data-runtime="15分钟" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t3.baidu.com/it/u=3049972242,2206661246&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">一千零一夜</div>
+              <div class="info">听文道读书解百忧</div>
+              <div class="score">9.3分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="9087" data-name="锵锵三人行" data-score="9.2" data-cover="http://img3.moretv.com.cn/img2.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2205739118.jpg" data-runtime="24分钟" data-year="1998">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img2.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2205739118.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">锵锵三人行</div>
+              <div class="info">凤凰经典谈话</div>
+              <div class="score">9.2分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23217" data-name="都嘟" data-score="8.7" data-cover="http://img3.moretv.com.cn/t2.baidu.com/it/u=4004156982,1065609361&fm=20" data-runtime="16分钟" data-year="2014">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t2.baidu.com/it/u=4004156982,1065609361&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">都嘟</div>
+              <div class="info">人物春秋社会万象</div>
+              <div class="score">8.7分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23212" data-name="晓松奇谈" data-score="9.1" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2281129225.jpg" data-runtime="40分钟" data-year="2014">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2281129225.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">晓松奇谈</div>
+              <div class="info">随晓松多视角看世界</div>
+              <div class="score">9.1分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23218" data-name="龙斌大话电影" data-score="9.0" data-cover="http://img3.moretv.com.cn/t1.baidu.com/it/u=653869006,2970660281&fm=20" data-runtime="15分钟" data-year="2013">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t1.baidu.com/it/u=653869006,2970660281&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">龙斌大话电影</div>
+              <div class="info">扒光电影呈献本质</div>
+              <div class="score">9.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23220" data-name="申在江湖" data-score="7.0" data-cover="http://img3.moretv.com.cn/b.hiphotos.baidu.com/video/pic/item/c8177f3e6709c93dec991b709d3df8dcd00054c9.jpg" data-runtime="" data-year="2014">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/b.hiphotos.baidu.com/video/pic/item/c8177f3e6709c93dec991b709d3df8dcd00054c9.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">申在江湖</div>
+              <div class="info">邀自媒体人解江湖事</div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23216" data-name="听说" data-score="9.1" data-cover="http://img3.moretv.com.cn/t3.baidu.com/it/u=3379286508,2256236261&fm=20" data-runtime="20分钟" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t3.baidu.com/it/u=3379286508,2256236261&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">听说</div>
+              <div class="info">用音乐展现社会面貌</div>
+              <div class="score">9.1分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="9033" data-name="老梁故事汇" data-score="8.4" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2224223524.jpg" data-runtime="27分钟14秒" data-year="2010">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2224223524.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">老梁故事汇</div>
+              <div class="info">社会热点与故事合体</div>
+              <div class="score">8.4分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="21042" data-name="局部" data-score="9.5" data-cover="http://img3.moretv.com.cn/t1.baidu.com/it/u=2967316262,2343373459&fm=20" data-runtime="25分钟" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t1.baidu.com/it/u=2967316262,2343373459&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">局部</div>
+              <div class="info">剖析名画精彩细节</div>
+              <div class="score">9.5分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23215" data-name="天下聊斋" data-score="7.0" data-cover="http://img3.moretv.com.cn/t2.baidu.com/it/u=1589249007,2271044593&fm=20" data-runtime="" data-year="2012">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t2.baidu.com/it/u=1589249007,2271044593&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">天下聊斋</div>
+              <div class="info">专家百姓一起评天下</div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23219" data-name="腾飞说三国" data-score="7.5" data-cover="http://img3.moretv.com.cn/t3.baidu.com/it/u=2784027422,1896800100&fm=20" data-runtime="" data-year="2014">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t3.baidu.com/it/u=2784027422,1896800100&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">腾飞说三国</div>
+              <div class="info">穿越三国看历史</div>
+              <div class="score">7.5分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="9074" data-name="开卷8分钟" data-score="9.2" data-cover="http://i1.tietuku.com/c09b347df96e669a.jpg" data-runtime="8分钟" data-year="2007">
+              <img class="lazy-pic" data-pic="http://i1.tietuku.com/c09b347df96e669a.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">开卷8分钟</div>
+              <div class="info">迥异又奇妙书中世界</div>
+              <div class="score">9.2分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="13302" data-name="一票难求" data-score="6.0" data-cover="http://img3.moretv.com.cn/t1.baidu.com/it/u=4033670404,1292358737&fm=20" data-runtime="41分钟13秒" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t1.baidu.com/it/u=4033670404,1292358737&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">一票难求</div>
+              <div class="info">大片来袭求张票</div>
+              <div class="score">6.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="8976" data-name="老梁观世界" data-score="8.5" data-cover="http://img3.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2224212617.jpg" data-runtime="" data-year="2012">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2224212617.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">老梁观世界</div>
+              <div class="info">探索中国看懂世界</div>
+              <div class="score">8.5分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="10466" data-name="天下被网罗" data-score="6.8" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2281131495.jpg" data-runtime="38分钟16秒" data-year="2013">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2281131495.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">天下被网罗</div>
+              <div class="info">在家知晓天下大事</div>
+              <div class="score">6.8分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23221" data-name="文化杂货铺" data-score="7.0" data-cover="http://img3.moretv.com.cn/img36.pplive.cn/SP423/2014/03/17/17023288860.jpg" data-runtime="" data-year="2014">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img36.pplive.cn/SP423/2014/03/17/17023288860.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">文化杂货铺</div>
+              <div class="info">探寻百姓生活文化点</div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23214" data-name="国学堂" data-score="7.0" data-cover="http://img3.moretv.com.cn/t2.baidu.com/it/u=3076741940,2555122922&fm=20" data-runtime="" data-year="1970">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t2.baidu.com/it/u=3076741940,2555122922&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">国学堂</div>
+              <div class="info">解构和新生的国学</div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23213" data-name="老梁说天下" data-score="7.0" data-cover="http://img3.moretv.com.cn/t3.baidu.com/it/u=2960210332,3284927494&fm=20" data-runtime="" data-year="2012">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t3.baidu.com/it/u=2960210332,3284927494&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">老梁说天下</div>
+              <div class="info">独道见解说尽天下事</div>
+              <div class="score">7.0分</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cate-list chart-list" style="display:none;">
+      <div class="cate-head video-list" data-target="-1" data-filter="">
+        <div class="cate-title chart">排行榜</div>
+        <a data-ismore="" data-filter="" href="javascript:void(0);" class="more">更多</a>
+      </div>
+      <div class="video-list-home">
+        <div class="scroll-wrapper">
+          <div class="scroller chart-scroller clearfix">
+            <div class="video-item-con">
+              <a href="javascript:void(0);" class="video-item" data-video-id="23308" data-name="老炮儿 彩蛋" data-score="8.6" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2287535715.jpg" data-runtime="" data-year="2015">
+                <div class="img-con placeholder"><img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2287535715.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></div>
+                <div class="word-con">
+                  <div class="title">老炮儿 彩蛋</div>
+                  <div class="info">8.6分</div>
+                  <div class="arrow"></div>
+                </div>
+              </a>
+              <a href="javascript:void(0);" class="video-item" data-video-id="23423" data-name="寻龙诀 预告片" data-score="8.0" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2290071500.jpg" data-runtime="2小时" data-year="2015">
+                <div class="img-con placeholder"><img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2290071500.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></div>
+                <div class="word-con">
+                  <div class="title">寻龙诀 预告片</div>
+                  <div class="info">8.0分</div>
+                  <div class="arrow"></div>
+                </div>
+              </a>
+              <a href="javascript:void(0);" class="video-item" data-video-id="21173" data-name="蚁人" data-score="8.3" data-cover="http://img3.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2263077908.jpg" data-runtime="1小时57分钟" data-year="2015">
+                <div class="img-con placeholder"><img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2263077908.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></div>
+                <div class="word-con">
+                  <div class="title">蚁人</div>
+                  <div class="info">8.3分</div>
+                  <div class="arrow"></div>
+                </div>
+              </a>
+              <a href="javascript:void(0);" class="video-item" data-video-id="22187" data-name="头脑特工队" data-score="8.8" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2274070420.jpg" data-runtime="1小时34分钟" data-year="2015">
+                <div class="img-con placeholder"><img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2274070420.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></div>
+                <div class="word-con">
+                  <div class="title">头脑特工队</div>
+                  <div class="info">8.8分</div>
+                  <div class="arrow"></div>
+                </div>
+              </a>
+              <a href="javascript:void(0);" class="video-item" data-video-id="21599" data-name="小黄人大眼萌" data-score="8.2" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2247111224.jpg" data-runtime="1小时31分钟" data-year="2015">
+                <div class="img-con placeholder"><img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2247111224.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></div>
+                <div class="word-con">
+                  <div class="title">小黄人大眼萌</div>
+                  <div class="info">8.2分</div>
+                  <div class="arrow"></div>
+                </div>
+              </a>
+            </div>
+            <div class="video-item-con">
+              <a href="javascript:void(0);" class="video-item" data-video-id="23440" data-name="芈月传" data-score="6.0" data-cover="http://img3.moretv.com.cn/t3.baidu.com/it/u=1186822750,1460877955&fm=20" data-runtime="" data-year="2015">
+                <div class="img-con placeholder"><img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t3.baidu.com/it/u=1186822750,1460877955&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></div>
+                <div class="word-con">
+                  <div class="title">芈月传</div>
+                  <div class="info">6.0分</div>
+                  <div class="arrow"></div>
+                </div>
+              </a>
+              <a href="javascript:void(0);" class="video-item" data-video-id="23419" data-name="秦时明月" data-score="5.1" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2290046602.jpg" data-runtime="45分钟" data-year="2015">
+                <div class="img-con placeholder"><img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2290046602.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></div>
+                <div class="word-con">
+                  <div class="title">秦时明月</div>
+                  <div class="info">5.1分</div>
+                  <div class="arrow"></div>
+                </div>
+              </a>
+              <a href="javascript:void(0);" class="video-item" data-video-id="23558" data-name="美丽的秘密" data-score="7.8" data-cover="http://img3.moretv.com.cn/t3.baidu.com/it/u=2239328314,1383276646&fm=20" data-runtime="" data-year="2014">
+                <div class="img-con placeholder"><img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t3.baidu.com/it/u=2239328314,1383276646&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></div>
+                <div class="word-con">
+                  <div class="title">美丽的秘密</div>
+                  <div class="info">7.8分</div>
+                  <div class="arrow"></div>
+                </div>
+              </a>
+              <a href="javascript:void(0);" class="video-item" data-video-id="23041" data-name="他来了，请闭眼" data-score="7.0" data-cover="http://img3.moretv.com.cn/t3.baidu.com/it/u=899783863,1048307497&fm=20" data-runtime="40分钟" data-year="2015">
+                <div class="img-con placeholder"><img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t3.baidu.com/it/u=899783863,1048307497&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></div>
+                <div class="word-con">
+                  <div class="title">他来了，请闭眼</div>
+                  <div class="info">7.0分</div>
+                  <div class="arrow"></div>
+                </div>
+              </a>
+              <a href="javascript:void(0);" class="video-item" data-video-id="21943" data-name="琅琊榜" data-score="9.3" data-cover="http://img3.moretv.com.cn/t2.baidu.com/it/u=898538092,2135289324&fm=20" data-runtime="40分钟" data-year="2015">
+                <div class="img-con placeholder"><img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t2.baidu.com/it/u=898538092,2135289324&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></div>
+                <div class="word-con">
+                  <div class="title">琅琊榜</div>
+                  <div class="info">9.3分</div>
+                  <div class="arrow"></div>
+                </div>
+              </a>
+            </div>
+            <div class="video-item-con">
+              <a href="javascript:void(0);" class="video-item" data-video-id="13179" data-name="海贼王" data-score="9.5" data-cover="http://img10.moretv.com.cn/images.movie.xunlei.com/gallery/187/594277516c14cdef5da3157f094a48b2.jpg" data-runtime="24分钟" data-year="1999">
+                <div class="img-con placeholder"><img class="lazy-pic" data-pic="http://img10.moretv.com.cn/images.movie.xunlei.com/gallery/187/594277516c14cdef5da3157f094a48b2.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></div>
+                <div class="word-con">
+                  <div class="title">海贼王</div>
+                  <div class="info">9.5分</div>
+                  <div class="arrow"></div>
+                </div>
+              </a>
+              <a href="javascript:void(0);" class="video-item" data-video-id="9448" data-name="火影忍者" data-score="8.5" data-cover="http://img3.moretv.com.cn/dmimg.5054399.com/allimg/NARUTOpicture/fmt/1.jpg" data-runtime="30分钟" data-year="2002">
+                <div class="img-con placeholder"><img class="lazy-pic" data-pic="http://img3.moretv.com.cn/dmimg.5054399.com/allimg/NARUTOpicture/fmt/1.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></div>
+                <div class="word-con">
+                  <div class="title">火影忍者</div>
+                  <div class="info">8.5分</div>
+                  <div class="arrow"></div>
+                </div>
+              </a>
+              <a href="javascript:void(0);" class="video-item" data-video-id="21855" data-name="一拳超人" data-score="6.7" data-cover="http://img3.moretv.com.cn/t1.baidu.com/it/u=2827380594,620414205&fm=20" data-runtime="" data-year="2015">
+                <div class="img-con placeholder"><img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t1.baidu.com/it/u=2827380594,620414205&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></div>
+                <div class="word-con">
+                  <div class="title">一拳超人</div>
+                  <div class="info">6.7分</div>
+                  <div class="arrow"></div>
+                </div>
+              </a>
+              <a href="javascript:void(0);" class="video-item" data-video-id="13505" data-name="龙珠超" data-score="9.2" data-cover="http://img3.moretv.com.cn/t3.baidu.com/it/u=3943939726,1652229235&fm=20" data-runtime="25分钟12秒" data-year="2015">
+                <div class="img-con placeholder"><img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t3.baidu.com/it/u=3943939726,1652229235&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></div>
+                <div class="word-con">
+                  <div class="title">龙珠超</div>
+                  <div class="info">9.2分</div>
+                  <div class="arrow"></div>
+                </div>
+              </a>
+              <a href="javascript:void(0);" class="video-item" data-video-id="9095" data-name="妖精的尾巴" data-score="8.2" data-cover="http://img3.moretv.com.cn/img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2097025891.jpg" data-runtime="24分钟" data-year="2009">
+                <div class="img-con placeholder"><img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2097025891.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></div>
+                <div class="word-con">
+                  <div class="title">妖精的尾巴</div>
+                  <div class="info">8.2分</div>
+                  <div class="arrow"></div>
+                </div>
+              </a>
+            </div>
+            <div class="video-item-con">
+              <a href="javascript:void(0);" class="video-item" data-video-id="9088" data-name="快乐大本营" data-score="6.5" data-cover="http://img3.moretv.com.cn/img3.moretv.com.cn/image17.poco.cn/mypoco/myphoto/20150415/17/17492574420150415174637025.jpg" data-runtime="1小时30分钟"
+              data-year="1997">
+                <div class="img-con placeholder"><img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.moretv.com.cn/image17.poco.cn/mypoco/myphoto/20150415/17/17492574420150415174637025.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></div>
+                <div class="word-con">
+                  <div class="title">快乐大本营</div>
+                  <div class="info">6.5分</div>
+                  <div class="arrow"></div>
+                </div>
+              </a>
+              <a href="javascript:void(0);" class="video-item" data-video-id="23241" data-name="全员加速中" data-score="5.5" data-cover="http://img3.moretv.com.cn/t3.baidu.com/it/u=430116534,712191884&fm=20" data-runtime="1小时45分钟" data-year="2015">
+                <div class="img-con placeholder"><img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t3.baidu.com/it/u=430116534,712191884&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></div>
+                <div class="word-con">
+                  <div class="title">全员加速中</div>
+                  <div class="info">5.5分</div>
+                  <div class="arrow"></div>
+                </div>
+              </a>
+              <a href="javascript:void(0);" class="video-item" data-video-id="9059" data-name="天天向上" data-score="8.0" data-cover="http://img3.moretv.com.cn/img6.moretv.com.cn/t3.baidu.com/it/u=2408999900,3038271405&fm=20" data-runtime="1小时30分钟" data-year="2008">
+                <div class="img-con placeholder"><img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img6.moretv.com.cn/t3.baidu.com/it/u=2408999900,3038271405&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></div>
+                <div class="word-con">
+                  <div class="title">天天向上</div>
+                  <div class="info">8.0分</div>
+                  <div class="arrow"></div>
+                </div>
+              </a>
+              <a href="javascript:void(0);" class="video-item" data-video-id="9001" data-name="一年级" data-score="8.2" data-cover="http://pic.moretv.com.cn/20141018/20141018085401467.jpg" data-runtime="3分钟47秒" data-year="2014">
+                <div class="img-con placeholder"><img class="lazy-pic" data-pic="http://pic.moretv.com.cn/20141018/20141018085401467.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></div>
+                <div class="word-con">
+                  <div class="title">一年级</div>
+                  <div class="info">8.2分</div>
+                  <div class="arrow"></div>
+                </div>
+              </a>
+              <a href="javascript:void(0);" class="video-item" data-video-id="8950" data-name="Running Man" data-score="9.6" data-cover="http://img3.moretv.com.cn/img3.moretv.com.cn/pic.moretv.com.cn//20140126/20140126170148340.jpg" data-runtime="1小时30分钟" data-year="2010">
+                <div class="img-con placeholder"><img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.moretv.com.cn/pic.moretv.com.cn//20140126/20140126170148340.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></div>
+                <div class="word-con">
+                  <div class="title">Running Man</div>
+                  <div class="info">9.6分</div>
+                  <div class="arrow"></div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cate-list" style="display:none;">
+      <div class="cate-head channel-list" data-target="900000541" data-filter="">
+        <div class="cate-title tv">内地最强档</div>
+        <a data-ismore="1" data-filter="" href="javascript:void(0);" class="more">更多</a>
+      </div>
+      <div class="video-list-home">
+        <div class="scroll-wrapper">
+          <div class="scroller clearfix">
+            <a href="javascript:void(0);" class="video-item" data-video-id="23703" data-name="天天有喜之人间有爱" data-score="7.0" data-cover="http://img3.moretv.com.cn/t1.baidu.com/it/u=453029921,2016249847&fm=20" data-runtime="" data-year="2016">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t1.baidu.com/it/u=453029921,2016249847&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">天天有喜之人间有爱</div>
+              <div class="info"></div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23419" data-name="秦时明月" data-score="5.1" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2290046602.jpg" data-runtime="45分钟" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2290046602.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">秦时明月</div>
+              <div class="info">高颜值动画真人剧</div>
+              <div class="score">5.1分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23680" data-name="少帅" data-score="7.0" data-cover="http://img3.moretv.com.cn/t3.baidu.com/it/u=2165643089,2701912521&fm=20" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t3.baidu.com/it/u=2165643089,2701912521&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">少帅</div>
+              <div class="info"></div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23595" data-name="匆匆那年：好久不见" data-score="7.9" data-cover="http://img3.moretv.com.cn/t3.baidu.com/it/u=1522329235,623230045&fm=20" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t3.baidu.com/it/u=1522329235,623230045&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">匆匆那年：好久不见</div>
+              <div class="info"></div>
+              <div class="score">7.9分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23041" data-name="他来了，请闭眼" data-score="7.0" data-cover="http://img3.moretv.com.cn/t3.baidu.com/it/u=899783863,1048307497&fm=20" data-runtime="40分钟" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t3.baidu.com/it/u=899783863,1048307497&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">他来了，请闭眼</div>
+              <div class="info">傲娇霍建华破奇案</div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23704" data-name="特种兵之霹雳火" data-score="7.5" data-cover="http://img3.moretv.com.cn/t1.baidu.com/it/u=4226276234,3017809780&fm=20" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t1.baidu.com/it/u=4226276234,3017809780&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">特种兵之霹雳火</div>
+              <div class="info"></div>
+              <div class="score">7.5分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23679" data-name="煮妇神探" data-score="7.0" data-cover="http://img3.moretv.com.cn/t3.baidu.com/it/u=1346831919,2478012605&fm=20" data-runtime="" data-year="2016">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t3.baidu.com/it/u=1346831919,2478012605&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">煮妇神探</div>
+              <div class="info"></div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23593" data-name="戴流苏耳环的少女" data-score="7.3" data-cover="http://img3.moretv.com.cn/t3.baidu.com/it/u=3970646165,3225822108&fm=20" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t3.baidu.com/it/u=3970646165,3225822108&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">戴流苏耳环的少女</div>
+              <div class="info"></div>
+              <div class="score">7.3分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23558" data-name="美丽的秘密" data-score="7.8" data-cover="http://img3.moretv.com.cn/t3.baidu.com/it/u=2239328314,1383276646&fm=20" data-runtime="" data-year="2014">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t3.baidu.com/it/u=2239328314,1383276646&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">美丽的秘密</div>
+              <div class="info">快递小妹逆袭何润东</div>
+              <div class="score">7.8分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23589" data-name="我的老婆大人是80后" data-score="6.3" data-cover="http://img3.moretv.com.cn/t2.baidu.com/it/u=1598206787,1722207152&fm=20" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t2.baidu.com/it/u=1598206787,1722207152&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">我的老婆大人是80后</div>
+              <div class="info"></div>
+              <div class="score">6.3分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23477" data-name="长在面包树上的女人" data-score="6.5" data-cover="http://img3.moretv.com.cn/t1.baidu.com/it/u=834456045,4040381508&fm=20" data-runtime="45分钟" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t1.baidu.com/it/u=834456045,4040381508&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">长在面包树上的女人</div>
+              <div class="info">唐嫣演绎爱情面包抉</div>
+              <div class="score">6.5分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23438" data-name="桃花运" data-score="7.8" data-cover="http://img3.moretv.com.cn/t2.baidu.com/it/u=2176667514,2712706570&fm=20" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t2.baidu.com/it/u=2176667514,2712706570&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">桃花运</div>
+              <div class="info">都市白领闹翻天</div>
+              <div class="score">7.8分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23493" data-name="爱情碟中谍" data-score="7.8" data-cover="http://img3.moretv.com.cn/t1.baidu.com/it/u=1053209100,3530198742&fm=20" data-runtime="" data-year="2014">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t1.baidu.com/it/u=1053209100,3530198742&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">爱情碟中谍</div>
+              <div class="info">姚笛付出捉奸小三</div>
+              <div class="score">7.8分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23494" data-name="长安三怪探" data-score="8.3" data-cover="http://img3.moretv.com.cn/t3.baidu.com/it/u=493013505,4000391414&fm=20" data-runtime="" data-year="2014">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t3.baidu.com/it/u=493013505,4000391414&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">长安三怪探</div>
+              <div class="info">陈浩民秋瓷炫破奇案</div>
+              <div class="score">8.3分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23495" data-name="婚姻攻防战之爱要付出" data-score="8.3" data-cover="http://img3.moretv.com.cn/t1.baidu.com/it/u=1132671621,710736498&fm=20" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t1.baidu.com/it/u=1132671621,710736498&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">婚姻攻防战之爱要付出</div>
+              <div class="info">誉王和黛玉CP登场</div>
+              <div class="score">8.3分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23556" data-name="战地狮吼" data-score="6.2" data-cover="http://img3.moretv.com.cn/t3.baidu.com/it/u=1603385007,2314351670&fm=20" data-runtime="" data-year="2013">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t3.baidu.com/it/u=1603385007,2314351670&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">战地狮吼</div>
+              <div class="info"></div>
+              <div class="score">6.2分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="22217" data-name="极品女士 第四季" data-score="8.5" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2273120562.jpg" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2273120562.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">极品女士 第四季</div>
+              <div class="info">极品女生搞笑喜剧</div>
+              <div class="score">8.5分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23591" data-name="嫂子·嫂子" data-score="6.8" data-cover="http://img3.moretv.com.cn/t1.baidu.com/it/u=2543778676,2676805685&fm=20" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t1.baidu.com/it/u=2543778676,2676805685&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">嫂子·嫂子</div>
+              <div class="info"></div>
+              <div class="score">6.8分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23554" data-name="爸爸快长大" data-score="7.0" data-cover="http://img3.moretv.com.cn/t2.baidu.com/it/u=2981653938,4219586494&fm=20" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t2.baidu.com/it/u=2981653938,4219586494&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">爸爸快长大</div>
+              <div class="info"></div>
+              <div class="score">7.0分</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cate-list special-list" style="display:none;">
+      <div class="scroller clearfix" style="width:10000px;">
+        <a data-id="194" data-name="话题女王杨幂 三次方处女座"><img class="lazy-pic" data-pic="http://img2.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2302819436.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></a>
+        <a data-id="186" data-name="朱亚文 行走的荷尔蒙"><img class="lazy-pic" data-pic="http://img2.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2302844462.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></a>
+        <a data-id="205" data-name="咱村里的那点事儿"><img class="lazy-pic" data-pic="http://img2.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2302810963.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></a>
+        <a data-id="177" data-name="李小璐 我不会轻易说爱"><img class="lazy-pic" data-pic="http://img2.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2303097424.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></a>
+        <a data-id="140" data-name="反恐时代：国土安全特辑"><img class="lazy-pic" data-pic="http://img2.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2303097384.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></a>
+        <a data-id="158" data-name="孙俪，一个有妖气的演员"><img class="lazy-pic" data-pic="http://img2.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2303097336.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></a>
+        <a data-id="155" data-name="麒麟才子胡歌 十年蜕变 涅磐重生"><img class="lazy-pic" data-pic="http://img2.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2303097305.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></a>
+        <a data-id="152" data-name="韩剧精神病人欢乐多"><img class="lazy-pic" data-pic="http://img2.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2303097272.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></a>
+        <a data-id="157" data-name="盘点那些舌尖上的电视剧"><img class="lazy-pic" data-pic="http://img2.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2303114667.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></a>
+        <a data-id="147" data-name="男色联盟2.0时代，小鲜肉来袭"><img class="lazy-pic" data-pic="http://img2.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2303097342.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></a>
+      </div>
+    </div>
+    <div class="cate-list" style="display:none;">
+      <div class="cate-head channel-list" data-target="900000191" data-filter="">
+        <div class="cate-title zongyi">综艺</div>
+        <a data-ismore="1" data-filter="" href="javascript:void(0);" class="more">更多</a>
+      </div>
+      <div class="video-list-home">
+        <div class="scroll-wrapper">
+          <div class="scroller clearfix">
+            <a href="javascript:void(0);" class="video-item" data-video-id="23730" data-name="最强大脑 第三季" data-score="7.0" data-cover="http://img3.moretv.com.cn/t1.baidu.com/it/u=1346930253,184544256&fm=20" data-runtime="" data-year="2016">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t1.baidu.com/it/u=1346930253,184544256&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">最强大脑 第三季</div>
+              <div class="info"></div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23355" data-name="一起出发" data-score="6.2" data-cover="http://img3.moretv.com.cn/t3.baidu.com/it/u=214082758,1754574193&fm=20" data-runtime="1小时26分钟" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t3.baidu.com/it/u=214082758,1754574193&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">一起出发</div>
+              <div class="info"></div>
+              <div class="score">6.2分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23710" data-name="不服来战" data-score="7.0" data-cover="http://img3.moretv.com.cn/t3.baidu.com/it/u=1974147007,687944671&fm=20" data-runtime="" data-year="2016">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t3.baidu.com/it/u=1974147007,687944671&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">不服来战</div>
+              <div class="info"></div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23761" data-name="冰雪星动力" data-score="7.8" data-cover="http://ww2.sinaimg.cn/large/6f718fe9jw1f05ygietljj205006kglx.jpg" data-runtime="" data-year="2016">
+              <img class="lazy-pic" data-pic="http://ww2.sinaimg.cn/large/6f718fe9jw1f05ygietljj205006kglx.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">冰雪星动力</div>
+              <div class="info"></div>
+              <div class="score">7.8分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23451" data-name="闪亮的爸爸" data-score="7.5" data-cover="http://img3.moretv.com.cn/t3.baidu.com/it/u=1698937798,1209061348&fm=20" data-runtime="1小时9分钟" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t3.baidu.com/it/u=1698937798,1209061348&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">闪亮的爸爸</div>
+              <div class="info"></div>
+              <div class="score">7.5分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23513" data-name="西游奇遇记" data-score="7.0" data-cover="http://img3.moretv.com.cn/t2.baidu.com/it/u=4031774030,3628856102&fm=20" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t2.baidu.com/it/u=4031774030,3628856102&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">西游奇遇记</div>
+              <div class="info"></div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23653" data-name="四大名助" data-score="7.5" data-cover="http://img3.moretv.com.cn/t1.baidu.com/it/u=3216707482,2162906246&fm=20" data-runtime="" data-year="2016">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t1.baidu.com/it/u=3216707482,2162906246&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">四大名助</div>
+              <div class="info"></div>
+              <div class="score">7.5分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="22155" data-name="中国梦想秀 第九季" data-score="8.4" data-cover="http://img3.moretv.com.cn/d.hiphotos.baidu.com/video/pic/item/e61190ef76c6a7efc07fe753f9faaf51f3de666d.jpg" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/d.hiphotos.baidu.com/video/pic/item/e61190ef76c6a7efc07fe753f9faaf51f3de666d.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">中国梦想秀 第九季</div>
+              <div class="info">你的梦想由我实现</div>
+              <div class="score">8.4分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="22398" data-name="跟着贝尔去冒险" data-score="5.9" data-cover="http://img3.moretv.com.cn/t2.baidu.com/it/u=2819202754,2844759&fm=20" data-runtime="1小时6分钟" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t2.baidu.com/it/u=2819202754,2844759&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">跟着贝尔去冒险</div>
+              <div class="info">贝爷教你荒野求生</div>
+              <div class="score">5.9分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23089" data-name="女婿上门了" data-score="8.3" data-cover="http://img3.moretv.com.cn/t1.baidu.com/it/u=377218543,204322340&fm=20" data-runtime="1小时21分钟" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t1.baidu.com/it/u=377218543,204322340&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">女婿上门了</div>
+              <div class="info"></div>
+              <div class="score">8.3分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23644" data-name="妈妈的牵挂" data-score="7.8" data-cover="http://img3.moretv.com.cn/t3.baidu.com/it/u=662475781,1399215262&fm=20" data-runtime="" data-year="2016">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t3.baidu.com/it/u=662475781,1399215262&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">妈妈的牵挂</div>
+              <div class="info"></div>
+              <div class="score">7.8分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23512" data-name="了不起的挑战" data-score="8.6" data-cover="http://img3.moretv.com.cn/t2.baidu.com/it/u=1298656211,1975607936&fm=20" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t2.baidu.com/it/u=1298656211,1975607936&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">了不起的挑战</div>
+              <div class="info"></div>
+              <div class="score">8.6分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23626" data-name="安徽卫视国剧盛典" data-score="9.9" data-cover="http://img3.moretv.com.cn/e.hiphotos.baidu.com/video/pic/item/b3b7d0a20cf431ad982b6a9a4836acaf2fdd9893.jpg" data-runtime="" data-year="2013">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/e.hiphotos.baidu.com/video/pic/item/b3b7d0a20cf431ad982b6a9a4836acaf2fdd9893.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">安徽卫视国剧盛典</div>
+              <div class="info"></div>
+              <div class="score">9.9分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23620" data-name="KBS演技大赏" data-score="8.8" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2303613320.jpg" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2303613320.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">KBS演技大赏</div>
+              <div class="info"></div>
+              <div class="score">8.8分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23619" data-name="SBS演技大赏全程" data-score="8.9" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2303595065.jpg" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2303595065.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">SBS演技大赏全程</div>
+              <div class="info"></div>
+              <div class="score">8.9分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="9025" data-name="金星脱口秀" data-score="6.0" data-cover="http://img3.moretv.com.cn/g.hiphotos.baidu.com/video/pic/item/48540923dd54564e77876b4cb7de9c82d0584fe1.jpg" data-runtime="1小时11分钟12秒"
+            data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/g.hiphotos.baidu.com/video/pic/item/48540923dd54564e77876b4cb7de9c82d0584fe1.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">金星脱口秀</div>
+              <div class="info">麻辣点评看到爽</div>
+              <div class="score">6.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="22397" data-name="隐藏的歌手" data-score="9.5" data-cover="http://img3.moretv.com.cn/t2.baidu.com/it/u=1863209931,2356008403&fm=20" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t2.baidu.com/it/u=1863209931,2356008403&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">隐藏的歌手</div>
+              <div class="info">真假歌手难分辨</div>
+              <div class="score">9.5分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="22002" data-name="笑傲江湖 第二季" data-score="8.5" data-cover="http://img3.moretv.com.cn/t1.baidu.com/it/u=808649694,2349906273&fm=20" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t1.baidu.com/it/u=808649694,2349906273&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">笑傲江湖 第二季</div>
+              <div class="info">传递笑声大舞台</div>
+              <div class="score">8.5分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="22431" data-name="巅峰拍挡 第二季" data-score="8.9" data-cover="http://img3.moretv.com.cn/t3.baidu.com/it/u=252809171,1916301090&fm=20" data-runtime="54分钟" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t3.baidu.com/it/u=252809171,1916301090&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">巅峰拍挡 第二季</div>
+              <div class="info">爱车族的最爱</div>
+              <div class="score">8.9分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="21827" data-name="挑战者联盟" data-score="7.0" data-cover="http://img3.moretv.com.cn/t1.baidu.com/it/u=3509365280,2327247571&fm=20" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t1.baidu.com/it/u=3509365280,2327247571&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">挑战者联盟</div>
+              <div class="info">明星挑战不可能</div>
+              <div class="score">7.0分</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cate-list" style="display:none;">
+      <div class="cate-head channel-list" data-target="900000527" data-filter="">
+        <div class="cate-title tv">美剧</div>
+        <a data-ismore="1" data-filter="" href="javascript:void(0);" class="more">更多</a>
+      </div>
+      <div class="video-list-home">
+        <div class="scroll-wrapper">
+          <div class="scroller clearfix">
+            <a href="javascript:void(0);" class="video-item" data-video-id="23161" data-name="童话镇 第四季" data-score="7.7" data-cover="http://img3.moretv.com.cn/a.hiphotos.baidu.com/video/pic/item/0d338744ebf81a4c7ceac5a5d42a6059242da685.jpg" data-runtime="1小时" data-year="2014">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/a.hiphotos.baidu.com/video/pic/item/0d338744ebf81a4c7ceac5a5d42a6059242da685.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">童话镇 第四季</div>
+              <div class="info">Frozen二次元神还原</div>
+              <div class="score">7.7分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="12199" data-name="生活大爆炸 第八季" data-score="9.0" data-cover="http://img3.moretv.com.cn/pic.tvmore.com.cn/20150304/20150304174147643.jpg" data-runtime="20分钟" data-year="2014">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/pic.tvmore.com.cn/20150304/20150304174147643.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">生活大爆炸 第八季</div>
+              <div class="info">"科学天才"情景剧</div>
+              <div class="score">9.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23186" data-name="十二猴子 第一季" data-score="7.1" data-cover="http://img3.moretv.com.cn/t3.baidu.com/it/u=1650768895,1853702200&fm=20" data-runtime="42分钟" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t3.baidu.com/it/u=1650768895,1853702200&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">十二猴子 第一季</div>
+              <div class="info"></div>
+              <div class="score">7.1分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23171" data-name="神盾局特工 第二季" data-score="8.3" data-cover="http://img3.moretv.com.cn/a.hiphotos.baidu.com/video/pic/item/7dd98d1001e93901cfac334d78ec54e736d19613.jpg" data-runtime="45分钟" data-year="2014">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/a.hiphotos.baidu.com/video/pic/item/7dd98d1001e93901cfac334d78ec54e736d19613.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">神盾局特工 第二季</div>
+              <div class="info">停不下来的脑洞大开</div>
+              <div class="score">8.3分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23179" data-name="摩登家庭 第六季" data-score="9.5" data-cover="http://img3.moretv.com.cn/t2.baidu.com/it/u=703365635,1763811671&fm=20" data-runtime="22分钟" data-year="2014">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t2.baidu.com/it/u=703365635,1763811671&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">摩登家庭 第六季</div>
+              <div class="info"></div>
+              <div class="score">9.5分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="6898" data-name="始祖家族 第二季" data-score="7.7" data-cover="http://pic.moretv.com.cn/20141008/20141008103955912.jpg" data-runtime="45分钟" data-year="2014">
+              <img class="lazy-pic" data-pic="http://pic.moretv.com.cn/20141008/20141008103955912.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">始祖家族 第二季</div>
+              <div class="info">初代吸血鬼第二部</div>
+              <div class="score">7.7分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="21994" data-name="少数派报告" data-score="6.2" data-cover="http://img3.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2261638066.jpg" data-runtime="42分钟" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2261638066.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">少数派报告</div>
+              <div class="info">电视剧版“先知”</div>
+              <div class="score">6.2分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="21744" data-name="新闻编辑室 第三季" data-score="9.5" data-cover="http://img3.moretv.com.cn/t2.baidu.com/it/u=3376942555,793289172&fm=20" data-runtime="1小时" data-year="2014">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t2.baidu.com/it/u=3376942555,793289172&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">新闻编辑室 第三季</div>
+              <div class="info">新闻间奇趣怪事</div>
+              <div class="score">9.5分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="21992" data-name="特工卡特 第一季" data-score="8.3" data-cover="http://img3.moretv.com.cn/t3.baidu.com/it/u=317147210,179318745&fm=20" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t3.baidu.com/it/u=317147210,179318745&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">特工卡特 第一季</div>
+              <div class="info">美国队长的女友</div>
+              <div class="score">8.3分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="6896" data-name="闪电侠 第一季" data-score="7.3" data-cover="http://pic.moretv.com.cn/20141009/20141009111626448.jpg" data-runtime="40分钟" data-year="2014">
+              <img class="lazy-pic" data-pic="http://pic.moretv.com.cn/20141009/20141009111626448.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">闪电侠 第一季</div>
+              <div class="info">光速超人类</div>
+              <div class="score">7.3分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="20965" data-name="硅谷 第一季" data-score="9.0" data-cover="http://img3.moretv.com.cn/t2.baidu.com/it/u=913148824,4151996883&fm=20" data-runtime="30分钟" data-year="2014">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t2.baidu.com/it/u=913148824,4151996883&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">硅谷 第一季</div>
+              <div class="info">硅谷里的喜剧</div>
+              <div class="score">9.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="21225" data-name="机器之心" data-score="7.6" data-cover="http://img3.moretv.com.cn/d.hiphotos.baidu.com/video/pic/item/0df3d7ca7bcb0a46d33d9eb66963f6246b60af25.jpg" data-runtime="1小时" data-year="2013">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/d.hiphotos.baidu.com/video/pic/item/0df3d7ca7bcb0a46d33d9eb66963f6246b60af25.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">机器之心</div>
+              <div class="info">火热上演人机基情</div>
+              <div class="score">7.6分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="6920" data-name="神烦警探 第二季" data-score="9.0" data-cover="http://pic.moretv.com.cn/20140929/20140929144135044.jpg" data-runtime="22分钟" data-year="2014">
+              <img class="lazy-pic" data-pic="http://pic.moretv.com.cn/20140929/20140929144135044.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">神烦警探 第二季</div>
+              <div class="info">个性侦探的妙闻趣事</div>
+              <div class="score">9.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="6907" data-name="国务卿女士 第一季" data-score="7.4" data-cover="http://pic.moretv.com.cn/20140923/20140923102845674.jpg" data-runtime="45分钟" data-year="2014">
+              <img class="lazy-pic" data-pic="http://pic.moretv.com.cn/20140923/20140923102845674.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">国务卿女士 第一季</div>
+              <div class="info">政治和家庭的女斗士</div>
+              <div class="score">7.4分</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cate-list" style="display:none;">
+      <div class="cate-head channel-list" data-target="900000549" data-filter="">
+        <div class="cate-title tv">英剧</div>
+        <a data-ismore="1" data-filter="" href="javascript:void(0);" class="more">更多</a>
+      </div>
+      <div class="video-list-home">
+        <div class="scroll-wrapper">
+          <div class="scroller clearfix">
+            <a href="javascript:void(0);" class="video-item" data-video-id="6929" data-name="福尔摩斯:基本演绎法 第三季" data-score="8.4" data-cover="http://img3.moretv.com.cn/t3.baidu.com/it/u=3560395791,2017514837&fm=20" data-runtime="40分钟" data-year="2014">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t3.baidu.com/it/u=3560395791,2017514837&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">福尔摩斯:基本演绎法 第三季</div>
+              <div class="info">新福尔摩斯探案</div>
+              <div class="score">8.4分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="6153" data-name="呼叫助产士 第一季" data-score="8.9" data-cover="http://img3.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2302838017.jpg" data-runtime="1小时" data-year="2012">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2302838017.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">呼叫助产士 第一季</div>
+              <div class="info">三个姑娘都太可爱了</div>
+              <div class="score">8.9分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="7048" data-name="神探夏洛克 第三季" data-score="8.8" data-cover="http://pic.moretv.com.cn//20140102/20140102095942647.jpg" data-runtime="44分钟15秒" data-year="2014">
+              <img class="lazy-pic" data-pic="http://pic.moretv.com.cn//20140102/20140102095942647.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">神探夏洛克 第三季</div>
+              <div class="info">基情四射腐女开心</div>
+              <div class="score">8.8分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="12207" data-name="情妇 第二季" data-score="7.2" data-cover="http://pic.moretv.com.cn/20140603/20140603110752199.jpg" data-runtime="43分钟36秒" data-year="2014">
+              <img class="lazy-pic" data-pic="http://pic.moretv.com.cn/20140603/20140603110752199.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">情妇 第二季</div>
+              <div class="info"></div>
+              <div class="score">7.2分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="21937" data-name="唐顿庄园 第五季" data-score="8.6" data-cover="http://img3.moretv.com.cn/i0.letvimg.com/webtv/201412/28/album_new_5907047_386X556.album_263d130eb00b4976a35c9d1dfaf4d836_1411540183279.jpg"
+            data-runtime="50分钟" data-year="2014">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/i0.letvimg.com/webtv/201412/28/album_new_5907047_386X556.album_263d130eb00b4976a35c9d1dfaf4d836_1411540183279.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">唐顿庄园 第五季</div>
+              <div class="info">等级制度的人间百态</div>
+              <div class="score">8.6分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="13212" data-name="皮囊 第七季" data-score="7.8" data-cover="http://img3.moretv.com.cn/t1.baidu.com/it/u=1809884985,2650446249&fm=20" data-runtime="49分钟3秒" data-year="2013">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t1.baidu.com/it/u=1809884985,2650446249&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">皮囊 第七季</div>
+              <div class="info">你们都背叛了青春</div>
+              <div class="score">7.8分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="6165" data-name="菜鸟间谍" data-score="8.3" data-cover="http://img6.moretv.com.cn/t2.baidu.com/it/u=2482086330,3125858731&fm=20" data-runtime="23分钟5秒" data-year="2013">
+              <img class="lazy-pic" data-pic="http://img6.moretv.com.cn/t2.baidu.com/it/u=2482086330,3125858731&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">菜鸟间谍</div>
+              <div class="info">最爱这种邪恶系正太</div>
+              <div class="score">8.3分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="6158" data-name="鬼影喧嚣" data-score="6.7" data-cover="http://img1.moretv.com.cn/t3.baidu.com/it/u=3529429597,1699021924&fm=20" data-runtime="4小时" data-year="2011">
+              <img class="lazy-pic" data-pic="http://img1.moretv.com.cn/t3.baidu.com/it/u=3529429597,1699021924&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">鬼影喧嚣</div>
+              <div class="info"></div>
+              <div class="score">6.7分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="6154" data-name="真爱故事" data-score="7.0" data-cover="http://pic.moretv.com.cn//20130808/20130808033528519.jpg" data-runtime="2小时30分钟" data-year="2012">
+              <img class="lazy-pic" data-pic="http://pic.moretv.com.cn//20130808/20130808033528519.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">真爱故事</div>
+              <div class="info">终于有女性觉醒了</div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="21210" data-name="艾玛" data-score="7.0" data-cover="http://img3.moretv.com.cn/t1.baidu.com/it/u=2845935967,1967916650&fm=20" data-runtime="42分钟10秒" data-year="2009">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t1.baidu.com/it/u=2845935967,1967916650&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">艾玛</div>
+              <div class="info">简·奥斯汀作品改编</div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="6157" data-name="辛巴达历险记" data-score="6.7" data-cover="http://img1.moretv.com.cn/t2.baidu.com/it/u=917437829,2585387075&fm=20" data-runtime="12小时" data-year="2012">
+              <img class="lazy-pic" data-pic="http://img1.moretv.com.cn/t2.baidu.com/it/u=917437829,2585387075&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">辛巴达历险记</div>
+              <div class="info">魔幻题材中的经典</div>
+              <div class="score">6.7分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="6138" data-name="神探夏洛克 第二季" data-score="9.5" data-cover="http://img3.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2302839148.jpg" data-runtime="4小时30分钟" data-year="2012">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2302839148.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">神探夏洛克 第二季</div>
+              <div class="info">文武摩斯惊艳亮相</div>
+              <div class="score">9.5分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="21941" data-name="殊途同归 第二季" data-score="9.2" data-cover="http://img3.moretv.com.cn/t2.baidu.com/it/u=2509987126,1279971063&fm=20" data-runtime="1小时" data-year="2012">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t2.baidu.com/it/u=2509987126,1279971063&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">殊途同归 第二季</div>
+              <div class="info">罪犯不得已的故事</div>
+              <div class="score">9.2分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="6623" data-name="低俗怪谈 第一季" data-score="7.5" data-cover="http://pic.moretv.com.cn/20140513/20140513181606798.jpg" data-runtime="1小时" data-year="2014">
+              <img class="lazy-pic" data-pic="http://pic.moretv.com.cn/20140513/20140513181606798.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">低俗怪谈 第一季</div>
+              <div class="info">狼人和道林滚床单</div>
+              <div class="score">7.5分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="13223" data-name="开膛街 第二季" data-score="8.4" data-cover="http://img3.moretv.com.cn/t2.baidu.com/it/u=2054195884,2793344256&fm=20" data-runtime="58分钟" data-year="2013">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t2.baidu.com/it/u=2054195884,2793344256&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">开膛街 第二季</div>
+              <div class="info">开膛手杰克后时代</div>
+              <div class="score">8.4分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="13197" data-name="IT狂人 第一季" data-score="8.9" data-cover="http://img3.moretv.com.cn/t2.baidu.com/it/u=773019912,1594678435&fm=20" data-runtime="24分钟47秒" data-year="2006">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t2.baidu.com/it/u=773019912,1594678435&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">IT狂人 第一季</div>
+              <div class="info">有点贱有点脏的调调</div>
+              <div class="score">8.9分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="12037" data-name="憨豆先生" data-score="9.2" data-cover="http://img3.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2302839146.jpg" data-runtime="26分钟17秒" data-year="1990">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2302839146.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">憨豆先生</div>
+              <div class="info">我要给憨豆生小豆子</div>
+              <div class="score">9.2分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="21942" data-name="皇家律师 第三季" data-score="9.3" data-cover="http://img3.moretv.com.cn/t2.baidu.com/it/u=357784445,4010021618&fm=20" data-runtime="59分钟" data-year="2014">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t2.baidu.com/it/u=357784445,4010021618&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">皇家律师 第三季</div>
+              <div class="info">极具挑战的案件</div>
+              <div class="score">9.3分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="6149" data-name="皇家律师 第二季" data-score="9.4" data-cover="http://pic.moretv.com.cn//20130805/20130805120121919.jpg" data-runtime="59分钟7秒" data-year="2012">
+              <img class="lazy-pic" data-pic="http://pic.moretv.com.cn//20130805/20130805120121919.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">皇家律师 第二季</div>
+              <div class="info">游走于阴谋的边缘</div>
+              <div class="score">9.4分</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cate-list special-list" style="display:none;">
+      <div class="scroller clearfix" style="width:10000px;">
+        <a data-id="224" data-name="陈坤 世界上另一个我"><img class="lazy-pic" data-pic="http://img2.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2304752680.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></a>
+        <a data-id="223" data-name="2015跨年演唱会 爱是永恒"><img class="lazy-pic" data-pic="http://img2.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2303968864.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></a>
+        <a data-id="182" data-name="第34届香港金像奖提名佳片展映"><img class="lazy-pic" data-pic="http://img2.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2302810985.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></a>
+        <a data-id="166" data-name="虐星新时代"><img class="lazy-pic" data-pic="http://img2.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2303097268.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></a>
+        <a data-id="145" data-name="狗狗主演电影合辑"><img class="lazy-pic" data-pic="http://img2.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2303097307.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></a>
+        <a data-id="178" data-name="吃货地带 享受美食盛宴"><img class="lazy-pic" data-pic="http://img2.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2303097381.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></a>
+        <a data-id="179" data-name="保护我们的家园 珍爱地球系列影片"><img class="lazy-pic" data-pic="http://img2.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2303097397.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></a>
+        <a data-id="28" data-name="美国秀看不停"><img class="lazy-pic" data-pic="http://img2.moretv.com.cn/a.hiphotos.baidu.com/image/pic/item/6f061d950a7b020833c8de4e64d9f2d3572cc818.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></a>
+        <a data-id="138" data-name="为巴黎祈福 守卫家园安全"><img class="lazy-pic" data-pic="http://i5.tietuku.com/e8b61466aea4d31b.png" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></a>
+      </div>
+    </div>
+    <div class="cate-list" style="display:none;">
+      <div class="cate-head channel-list" data-target="900000534" data-filter="">
+        <div class="cate-title tv">韩剧</div>
+        <a data-ismore="1" data-filter="" href="javascript:void(0);" class="more">更多</a>
+      </div>
+      <div class="video-list-home">
+        <div class="scroll-wrapper">
+          <div class="scroller clearfix">
+            <a href="javascript:void(0);" class="video-item" data-video-id="23713" data-name="扑通扑通LOVE" data-score="8.2" data-cover="http://ww4.sinaimg.cn/mw690/005JFQ3sjw1f05y8cfa16j30b30gotar.jpg" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://ww4.sinaimg.cn/mw690/005JFQ3sjw1f05y8cfa16j30b30gotar.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">扑通扑通LOVE</div>
+              <div class="info">本剧有毒！穿越朝鲜霸道大王爱上我！</div>
+              <div class="score">8.2分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23270" data-name="高品格单恋" data-score="7.5" data-cover="http://img3.moretv.com.cn/t1.baidu.com/it/u=109609321,1047280052&fm=20" data-runtime="15分钟" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t1.baidu.com/it/u=109609321,1047280052&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">高品格单恋</div>
+              <div class="info">傲娇自恋霸道总裁加山村少女</div>
+              <div class="score">7.5分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="21153" data-name="制作人" data-score="8.0" data-cover="http://img3.moretv.com.cn/f.hiphotos.baidu.com/video/pic/item/94cad1c8a786c91714f92d4ecf3d70cf3ac757ca.jpg" data-runtime="1小时10分钟" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/f.hiphotos.baidu.com/video/pic/item/94cad1c8a786c91714f92d4ecf3d70cf3ac757ca.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">制作人</div>
+              <div class="info">都教授变菜鸟PD</div>
+              <div class="score">8.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="21966" data-name="Oh 我的鬼神君" data-score="8.5" data-cover="http://img3.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2250194439.jpg" data-runtime="1小时" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2250194439.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">Oh 我的鬼神君</div>
+              <div class="info">女鬼和厨子的浪漫</div>
+              <div class="score">8.5分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23157" data-name="她很漂亮" data-score="7.9" data-cover="http://img3.moretv.com.cn/i.gtimg.cn/qqlive/img/jpgcache/files/qqvideo/9/920xa15m6fawdji.jpg" data-runtime="1小时" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/i.gtimg.cn/qqlive/img/jpgcache/files/qqvideo/9/920xa15m6fawdji.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">她很漂亮</div>
+              <div class="info">双俐兄妹一生推</div>
+              <div class="score">7.9分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="6978" data-name="治愈者" data-score="8.5" data-cover="http://img3.moretv.com.cn/t1.baidu.com/it/u=608599637,2315352283&fm=20" data-runtime="1小时" data-year="2014">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t1.baidu.com/it/u=608599637,2315352283&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">治愈者</div>
+              <div class="info">治愈夫妇虐单身狗</div>
+              <div class="score">8.5分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="7066" data-name="命中注定我爱你 韩版" data-score="6.7" data-cover="http://img3.moretv.com.cn/a.hiphotos.baidu.com/video/pic/item/242dd42a2834349b2a1d725ecbea15ce37d3bed5.jpg" data-runtime="1小时26分钟3秒"
+            data-year="2014">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/a.hiphotos.baidu.com/video/pic/item/242dd42a2834349b2a1d725ecbea15ce37d3bed5.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">命中注定我爱你 韩版</div>
+              <div class="info"></div>
+              <div class="score">6.7分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="6702" data-name="巡夜人日志" data-score="6.0" data-cover="http://pic.moretv.com.cn/20140805/20140805095857318.jpg" data-runtime="1小时" data-year="2014">
+              <img class="lazy-pic" data-pic="http://pic.moretv.com.cn/20140805/20140805095857318.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">巡夜人日志</div>
+              <div class="info"></div>
+              <div class="score">6.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="12146" data-name="放学后福不福 第2部" data-score="5.2" data-cover="http://img3.moretv.com.cn/t3.baidu.com/it/u=540554107,2288813641&fm=20" data-runtime="23分钟1秒" data-year="2014">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t3.baidu.com/it/u=540554107,2288813641&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">放学后福不福 第2部</div>
+              <div class="info"></div>
+              <div class="score">5.2分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="13316" data-name="山蒜酱汤:12年后的重逢" data-score="6.6" data-cover="http://pic.moretv.com.cn//20140324/20140324165220529.jpg" data-runtime="1小时7分钟40秒" data-year="2014">
+              <img class="lazy-pic" data-pic="http://pic.moretv.com.cn//20140324/20140324165220529.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">山蒜酱汤:12年后的重逢</div>
+              <div class="info"></div>
+              <div class="score">6.6分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="6668" data-name="贵夫人" data-score="5.3" data-cover="http://pic.moretv.com.cn//20140121/20140121120921484.jpg" data-runtime="48分钟25秒" data-year="2014">
+              <img class="lazy-pic" data-pic="http://pic.moretv.com.cn//20140121/20140121120921484.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">贵夫人</div>
+              <div class="info">繁华命运渐次上演</div>
+              <div class="score">5.3分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="12038" data-name="密会" data-score="8.6" data-cover="http://pic.moretv.com.cn//20140318/20140318152907475.jpg" data-runtime="1小时13分钟24秒" data-year="2014">
+              <img class="lazy-pic" data-pic="http://pic.moretv.com.cn//20140318/20140318152907475.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">密会</div>
+              <div class="info">最文艺的偷情白皮书</div>
+              <div class="score">8.6分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="6632" data-name="宥娜的街" data-score="8.9" data-cover="http://pic.moretv.com.cn/20140521/20140521101917151.jpg" data-runtime="1小时9分钟49秒" data-year="2014">
+              <img class="lazy-pic" data-pic="http://pic.moretv.com.cn/20140521/20140521101917151.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">宥娜的街</div>
+              <div class="info"></div>
+              <div class="score">8.9分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="6854" data-name="幻想巨塔" data-score="7.3" data-cover="http://img3.moretv.com.cn/photocdn.sohu.com/20131127/vrsa_ver6205820.jpg" data-runtime="50分钟" data-year="2013">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/photocdn.sohu.com/20131127/vrsa_ver6205820.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">幻想巨塔</div>
+              <div class="info"></div>
+              <div class="score">7.3分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="7064" data-name="继承者们" data-score="6.8" data-cover="http://img3.moretv.com.cn/b.hiphotos.baidu.com/video/pic/item/2934349b033b5bb5b6aec00d34d3d539b700bccc.jpg" data-runtime="1小时" data-year="2013">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/b.hiphotos.baidu.com/video/pic/item/2934349b033b5bb5b6aec00d34d3d539b700bccc.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">继承者们</div>
+              <div class="info">穷女与富公子孽缘</div>
+              <div class="score">6.8分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="6212" data-name="邻家花美男" data-score="7.5" data-cover="http://pic.moretv.com.cn//20130807/20130807042614160.jpg" data-runtime="46分钟" data-year="2013">
+              <img class="lazy-pic" data-pic="http://pic.moretv.com.cn//20130807/20130807042614160.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">邻家花美男</div>
+              <div class="info"></div>
+              <div class="score">7.5分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="6293" data-name="Who Are You" data-score="6.7" data-cover="http://img2.moretv.com.cn/t3.baidu.com/it/u=42311881,1654120273&fm=20" data-runtime="12小时" data-year="2013">
+              <img class="lazy-pic" data-pic="http://img2.moretv.com.cn/t3.baidu.com/it/u=42311881,1654120273&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">Who Are You</div>
+              <div class="info">灵能警探破奇案</div>
+              <div class="score">6.7分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="11920" data-name="握住我的手" data-score="7.0" data-cover="http://img3.moretv.com.cn/photocdn.sohu.com/20131007/vrsab_ver5943121.jpg" data-runtime="1小时" data-year="2013">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/photocdn.sohu.com/20131007/vrsab_ver5943121.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">握住我的手</div>
+              <div class="info">含冤女逆袭寻真相</div>
+              <div class="score">7.0分</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cate-list" style="display:none;">
+      <div class="cate-head channel-list" data-target="900000550" data-filter="">
+        <div class="cate-title tv">日剧</div>
+        <a data-ismore="1" data-filter="" href="javascript:void(0);" class="more">更多</a>
+      </div>
+      <div class="video-list-home">
+        <div class="scroll-wrapper">
+          <div class="scroller clearfix">
+            <a href="javascript:void(0);" class="video-item" data-video-id="23711" data-name="请和这个没用的我谈恋爱" data-score="6.9" data-cover="http://ww4.sinaimg.cn/mw690/005JFQ3sjw1f05y8cxensj30b40g40vs.jpg" data-runtime="" data-year="2016">
+              <img class="lazy-pic" data-pic="http://ww4.sinaimg.cn/mw690/005JFQ3sjw1f05y8cxensj30b40g40vs.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">请和这个没用的我谈恋爱</div>
+              <div class="info">老衲的少女心砰然心动</div>
+              <div class="score">6.9分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23712" data-name="真田丸" data-score="8.9" data-cover="http://ww2.sinaimg.cn/mw690/005JFQ3sjw1f05y8c6nzdj30bs0go40m.jpg" data-runtime="" data-year="2016">
+              <img class="lazy-pic" data-pic="http://ww2.sinaimg.cn/mw690/005JFQ3sjw1f05y8c6nzdj30bs0go40m.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">真田丸</div>
+              <div class="info">明明是真田逗比丸</div>
+              <div class="score">8.9分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23720" data-name="直美与加奈子" data-score="8.3" data-cover="http://ww2.sinaimg.cn/mw690/005JFQ3sjw1f05y8bt3a2j30b40g40w4.jpg" data-runtime="" data-year="2016">
+              <img class="lazy-pic" data-pic="http://ww2.sinaimg.cn/mw690/005JFQ3sjw1f05y8bt3a2j30b40g40w4.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">直美与加奈子</div>
+              <div class="info">呐，我们把欺负你的人杀掉吧～</div>
+              <div class="score">8.3分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23701" data-name="别让我走" data-score="8.4" data-cover="http://ww4.sinaimg.cn/mw690/005JFQ3sjw1f05y8dgy12j30b40g4q47.jpg" data-runtime="" data-year="2016">
+              <img class="lazy-pic" data-pic="http://ww4.sinaimg.cn/mw690/005JFQ3sjw1f05y8dgy12j30b40g4q47.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">别让我走</div>
+              <div class="info">Never Let Me Go</div>
+              <div class="score">8.4分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23540" data-name="预告犯 -THE PAIN-" data-score="8.2" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2238942945.jpg" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2238942945.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">预告犯 -THE PAIN-</div>
+              <div class="info">远超电影版的良心剧</div>
+              <div class="score">8.2分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23571" data-name="五个Junko" data-score="8.7" data-cover="http://img3.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2302810617.jpg" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2302810617.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">五个Junko</div>
+              <div class="info">他，怎么还没消失。</div>
+              <div class="score">8.7分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="6573" data-name="失恋巧克力职人" data-score="7.4" data-cover="http://img3.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2164032568.jpg" data-runtime="45分钟" data-year="2014">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2164032568.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">失恋巧克力职人</div>
+              <div class="info">男神松本润制服诱惑</div>
+              <div class="score">7.4分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23536" data-name="我的老大、我的英雄" data-score="8.1" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2152488105.jpg" data-runtime="" data-year="2006">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2152488105.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">我的老大、我的英雄</div>
+              <div class="info">满满都是表情包</div>
+              <div class="score">8.1分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23158" data-name="为了N" data-score="8.9" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2201988983.jpg" data-runtime="46分钟" data-year="2014">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2201988983.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">为了N</div>
+              <div class="info">每个人心中都有一个N</div>
+              <div class="score">8.9分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="22246" data-name="朝5晚9：恋上我的帅和尚" data-score="8.5" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2271716344.jpg" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2271716344.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">朝5晚9：恋上我的帅和尚</div>
+              <div class="info">最新一集虐成狗了</div>
+              <div class="score">8.5分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23248" data-name="Transit Girls" data-score="5.5" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2279230165.jpg" data-runtime="25分钟" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2279230165.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">Transit Girls</div>
+              <div class="info">姐妹百合禁断之恋</div>
+              <div class="score">5.5分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23428" data-name="伪装夫妇" data-score="8.2" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2265516981.jpg" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2265516981.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">伪装夫妇</div>
+              <div class="info">一对百合一对基</div>
+              <div class="score">8.2分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23557" data-name="星期恋人：前篇+后篇" data-score="6.2" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2234933922.jpg" data-runtime="1小时6分钟" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2234933922.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">星期恋人：前篇+后篇</div>
+              <div class="info">爱我你怕了嘛？！</div>
+              <div class="score">6.2分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23535" data-name="爱情洗牌" data-score="8.5" data-cover="http://img3.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2302810616.jpg" data-runtime="1小时" data-year="2009">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2302810616.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">爱情洗牌</div>
+              <div class="info">不断高能的恋爱指南</div>
+              <div class="score">8.5分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23209" data-name="监狱学园" data-score="6.9" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2267486895.jpg" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2267486895.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">监狱学园</div>
+              <div class="info">耻度极高的真人动漫</div>
+              <div class="score">6.9分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23429" data-name="小小食杂铺" data-score="8.9" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2280550415.jpg" data-runtime="30分钟" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2280550415.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">小小食杂铺</div>
+              <div class="info">淡定从容的生活岁月</div>
+              <div class="score">8.9分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23154" data-name="警报：刑警·女友·完全恶女" data-score="8.0" data-cover="http://i13.tietuku.com/deb553b50aeeee53.png" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://i13.tietuku.com/deb553b50aeeee53.png" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">警报：刑警·女友·完全恶女</div>
+              <div class="info">史上最强恶女设定</div>
+              <div class="score">8.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23469" data-name="奔跑吧！小百合酱" data-score="7.0" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2290923892.jpg" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2290923892.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">奔跑吧！小百合酱</div>
+              <div class="info">我的女友是匹马</div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23156" data-name="掟上今日子的备忘录" data-score="7.4" data-cover="http://img3.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2274077677.jpg" data-runtime="57分钟" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2274077677.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">掟上今日子的备忘录</div>
+              <div class="info">痴汉脸全程看gakki</div>
+              <div class="score">7.4分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23430" data-name="产科医鸿鸟" data-score="8.4" data-cover="http://i5.tietuku.com/c38b051eb394cc27.png" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://i5.tietuku.com/c38b051eb394cc27.png" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">产科医鸿鸟</div>
+              <div class="info">温情却不乱洒狗血</div>
+              <div class="score">8.4分</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cate-list special-list" style="display:none;">
+      <div class="scroller clearfix" style="width:10000px;">
+        <a data-id="220" data-name="2015年度榜单 优秀动画电影合辑"><img class="lazy-pic" data-pic="http://img2.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2303111677.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></a>
+        <a data-id="206" data-name="孩子的电影世界"><img class="lazy-pic" data-pic="http://img2.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2302819440.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></a>
+        <a data-id="212" data-name="热血机战 超现实的震撼"><img class="lazy-pic" data-pic="http://img2.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2302810994.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></a>
+        <a data-id="144" data-name="陪你长大的童话故事"><img class="lazy-pic" data-pic="http://img2.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2303097370.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></a>
+        <a data-id="216" data-name="温暖感动的圣诞短片欣赏"><img class="lazy-pic" data-pic="http://img2.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2302810966.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></a>
+        <a data-id="183" data-name="宫崎骏 陪你度过的美好时光"><img class="lazy-pic" data-pic="http://img2.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2303097253.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></a>
+        <a data-id="210" data-name="欧美动漫精选 不一样的体验"><img class="lazy-pic" data-pic="http://img2.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2302811014.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></a>
+        <a data-id="202" data-name="定格万岁 逐格造梦的电影魅力"><img class="lazy-pic" data-pic="http://img2.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2302811007.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></a>
+        <a data-id="203" data-name="萌萌哒电影角色 总有一款萌物降服你"><img class="lazy-pic" data-pic="http://img2.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2302811000.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></a>
+        <a data-id="211" data-name="篮球场上的激情 不要低估一颗冠军的心"><img class="lazy-pic" data-pic="http://img2.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2302810997.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png"></a>
+      </div>
+    </div>
+    <div class="cate-list" style="display:none;">
+      <div class="cate-head channel-list" data-target="900000192" data-filter="">
+        <div class="cate-title dongman">动漫</div>
+        <a data-ismore="1" data-filter="" href="javascript:void(0);" class="more">更多</a>
+      </div>
+      <div class="video-list-home">
+        <div class="scroll-wrapper">
+          <div class="scroller clearfix">
+            <a href="javascript:void(0);" class="video-item" data-video-id="9404" data-name="银魂" data-score="9.6" data-cover="http://ww2.sinaimg.cn/mw690/6f718fe9jw1f05re2vgprj20b40fatbi.jpg" data-runtime="25分钟" data-year="2006">
+              <img class="lazy-pic" data-pic="http://ww2.sinaimg.cn/mw690/6f718fe9jw1f05re2vgprj20b40fatbi.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">银魂</div>
+              <div class="info">无厘头无下限</div>
+              <div class="score">9.6分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23637" data-name="疾走王子" data-score="7.8" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2305511793.jpg" data-runtime="" data-year="2016">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2305511793.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">疾走王子</div>
+              <div class="info"></div>
+              <div class="score">7.8分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23676" data-name="苍之彼方的四重奏" data-score="7.0" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2308192710.jpg" data-runtime="" data-year="2016">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2308192710.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">苍之彼方的四重奏</div>
+              <div class="info"></div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="13295" data-name="赤发的白雪姬" data-score="7.5" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2245605592.jpg" data-runtime="25分钟39秒" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2245605592.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">赤发的白雪姬</div>
+              <div class="info"></div>
+              <div class="score">7.5分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23700" data-name="最弱无败神装机龙之巴哈姆特" data-score="7.0" data-cover="http://img3.moretv.com.cn/img36.pplive.cn/sp150/2015/12/30/14552905593.jpg" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img36.pplive.cn/sp150/2015/12/30/14552905593.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">最弱无败神装机龙之巴哈姆特</div>
+              <div class="info"></div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23675" data-name="魔法少女什么的已经够了啦" data-score="7.0" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2306714180.jpg" data-runtime="24分钟" data-year="2016">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2306714180.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">魔法少女什么的已经够了啦</div>
+              <div class="info"></div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23667" data-name="暗芝居 第三季" data-score="7.0" data-cover="http://img3.moretv.com.cn/image.tianjimedia.com/uploadImages/upload/20151102/3htok3xqcsqjpg.jpg" data-runtime="" data-year="2016">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/image.tianjimedia.com/uploadImages/upload/20151102/3htok3xqcsqjpg.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">暗芝居 第三季</div>
+              <div class="info"></div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23666" data-name="死亡黑标" data-score="8.1" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2292342752.jpg" data-runtime="" data-year="2016">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2292342752.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">死亡黑标</div>
+              <div class="info"></div>
+              <div class="score">8.1分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23669" data-name="虹色时光" data-score="7.0" data-cover="http://img3.moretv.com.cn/www.dmnico.cn/images/vodpic/ca68eb93bc453456614c9e7f202d8fa2.jpg" data-runtime="" data-year="2016">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/www.dmnico.cn/images/vodpic/ca68eb93bc453456614c9e7f202d8fa2.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">虹色时光</div>
+              <div class="info"></div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23668" data-name="灰与幻想的格林姆迦尔" data-score="7.0" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2306712330.jpg" data-runtime="" data-year="2016">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2306712330.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">灰与幻想的格林姆迦尔</div>
+              <div class="info"></div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23643" data-name="春与夏推理事件簿" data-score="7.6" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2305972982.jpg" data-runtime="" data-year="2016">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2305972982.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">春与夏推理事件簿</div>
+              <div class="info"></div>
+              <div class="score">7.6分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="22164" data-name="画江湖之灵主" data-score="7.9" data-cover="http://img3.moretv.com.cn/r4.ykimg.com/050E000055E6C99767BC3C13D20D9E4B" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/r4.ykimg.com/050E000055E6C99767BC3C13D20D9E4B" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">画江湖之灵主</div>
+              <div class="info"></div>
+              <div class="score">7.9分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23656" data-name="寿司警察" data-score="7.0" data-cover="http://img3.moretv.com.cn/img2.gyjlm.com/images/img201509/20161715225525203.jpg" data-runtime="5分钟" data-year="2016">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img2.gyjlm.com/images/img201509/20161715225525203.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">寿司警察</div>
+              <div class="info"></div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23662" data-name="GATE 奇幻自卫队 炎龙篇" data-score="7.0" data-cover="http://img3.moretv.com.cn/pic.77ds.net:878/pic/201511/20161910184752941.jpg" data-runtime="25分钟" data-year="2016">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/pic.77ds.net:878/pic/201511/20161910184752941.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">GATE 奇幻自卫队 炎龙篇</div>
+              <div class="info"></div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23665" data-name="舞武器舞乱伎" data-score="7.0" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2306711324.jpg" data-runtime="" data-year="2016">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2306711324.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">舞武器舞乱伎</div>
+              <div class="info"></div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23664" data-name="红壳的潘多拉" data-score="7.0" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2306710204.jpg" data-runtime="" data-year="2016">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2306710204.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">红壳的潘多拉</div>
+              <div class="info"></div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23658" data-name="神圣之门" data-score="7.0" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2306709204.jpg" data-runtime="" data-year="2016">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2306709204.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">神圣之门</div>
+              <div class="info"></div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23651" data-name="暗杀教室 第2季" data-score="8.5" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2306430904.jpg" data-runtime="" data-year="2016">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2306430904.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">暗杀教室 第2季</div>
+              <div class="info"></div>
+              <div class="score">8.5分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23650" data-name="机动强袭室第八组" data-score="7.8" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2306419573.jpg" data-runtime="" data-year="2016">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2306419573.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">机动强袭室第八组</div>
+              <div class="info"></div>
+              <div class="score">7.8分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23652" data-name="从前有座灵剑山" data-score="8.6" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2300507675.jpg" data-runtime="" data-year="2016">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2300507675.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">从前有座灵剑山</div>
+              <div class="info"></div>
+              <div class="score">8.6分</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cate-list" style="display:none;">
+      <div class="cate-head video-list" data-target="0" data-filter="">
+        <div class="cate-title jishi">纪实</div>
+      </div>
+      <div class="video-list-home">
+        <div class="scroll-wrapper">
+          <div class="scroller clearfix">
+            <a href="javascript:void(0);" class="video-item" data-video-id="23492" data-name="触手可及" data-score="7.0" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2293445124.jpg" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2293445124.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">触手可及</div>
+              <div class="info">一部陈冠希的纪录片</div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="22037" data-name="传奇" data-score="7.0" data-cover="http://img3.moretv.com.cn/t1.baidu.com/it/u=3951125565,957638535&fm=20" data-runtime="" data-year="2012">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t1.baidu.com/it/u=3951125565,957638535&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">传奇</div>
+              <div class="info">经典和全面的记录</div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="13484" data-name="舌尖上的中国2" data-score="7.0" data-cover="http://pic.moretv.com.cn/20140418/20140418223334960.jpg" data-runtime="50分钟39秒" data-year="2014">
+              <img class="lazy-pic" data-pic="http://pic.moretv.com.cn/20140418/20140418223334960.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">舌尖上的中国2</div>
+              <div class="info">吃货必备指南</div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="22051" data-name="行者" data-score="7.0" data-cover="http://img3.moretv.com.cn/g.hiphotos.baidu.com/video/pic/item/21a4462309f79052234e0d330ff3d7ca7bcbd56e.jpg" data-runtime="" data-year="2013">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/g.hiphotos.baidu.com/video/pic/item/21a4462309f79052234e0d330ff3d7ca7bcbd56e.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">行者</div>
+              <div class="info">品味旅行</div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="22056" data-name="揭秘" data-score="7.0" data-cover="http://img3.moretv.com.cn/t1.baidu.com/it/u=2685055853,2135628709&fm=20" data-runtime="" data-year="2012">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t1.baidu.com/it/u=2685055853,2135628709&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">揭秘</div>
+              <div class="info">真相原来如此</div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="22054" data-name="玩转地球" data-score="7.0" data-cover="http://img3.moretv.com.cn/t3.baidu.com/it/u=2048473753,1131827350&fm=20" data-runtime="" data-year="2013">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t3.baidu.com/it/u=2048473753,1131827350&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">玩转地球</div>
+              <div class="info">背包客急先锋</div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="22042" data-name="世纪大讲堂" data-score="7.0" data-cover="http://img3.moretv.com.cn/t3.baidu.com/it/u=3266587567,446115139&fm=20" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t3.baidu.com/it/u=3266587567,446115139&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">世纪大讲堂</div>
+              <div class="info">能听懂的学术</div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="22070" data-name="发现" data-score="7.0" data-cover="http://img3.moretv.com.cn/t1.baidu.com/it/u=1264629078,1736569614&fm=20" data-runtime="" data-year="2013">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t1.baidu.com/it/u=1264629078,1736569614&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">发现</div>
+              <div class="info">东北往事</div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="22060" data-name="第三极" data-score="5.6" data-cover="http://img3.moretv.com.cn/t3.baidu.com/it/u=3457503636,2789580203&fm=20" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t3.baidu.com/it/u=3457503636,2789580203&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">第三极</div>
+              <div class="info">藏区之美</div>
+              <div class="score">5.6分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="22068" data-name="感动" data-score="7.0" data-cover="http://img3.moretv.com.cn/t3.baidu.com/it/u=3898676069,2033286489&fm=20" data-runtime="" data-year="2013">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t3.baidu.com/it/u=3898676069,2033286489&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">感动</div>
+              <div class="info">公益性栏目</div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="22040" data-name="天眼" data-score="6.0" data-cover="http://img3.moretv.com.cn/t3.baidu.com/it/u=3620841212,1046847276&fm=20" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t3.baidu.com/it/u=3620841212,1046847276&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">天眼</div>
+              <div class="info">多纬度剖析社会事件</div>
+              <div class="score">6.0分</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cate-list" style="display:none;">
+      <div class="cate-head video-list" data-target="0" data-filter="">
+        <div class="cate-title keji">科技</div>
+      </div>
+      <div class="video-list-home">
+        <div class="scroll-wrapper">
+          <div class="scroller clearfix">
+            <a href="javascript:void(0);" class="video-item" data-video-id="23682" data-name="乐视生态世界" data-score="8.5" data-cover="http://img3.moretv.com.cn/i1.letvimg.com/lc04_isvrs/201601/11/11/10/1f3fd46f-27be-4265-84e5-ea2992bbd80b.jpg" data-runtime="" data-year="2016">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/i1.letvimg.com/lc04_isvrs/201601/11/11/10/1f3fd46f-27be-4265-84e5-ea2992bbd80b.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">乐视生态世界</div>
+              <div class="info">全新LOGO震撼亮相</div>
+              <div class="score">8.5分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="23677" data-name="乐视超级汽车" data-score="8.5" data-cover="http://img3.moretv.com.cn/i1.letvimg.com/lc04_isvrs/201601/05/14/01/72d57f83-96ec-4a6f-837e-46dbab3d152b.jpg" data-runtime="" data-year="2016">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/i1.letvimg.com/lc04_isvrs/201601/05/14/01/72d57f83-96ec-4a6f-837e-46dbab3d152b.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">乐视超级汽车</div>
+              <div class="info">FF超炫高科技概念车</div>
+              <div class="score">8.5分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="21332" data-name="锤子科技新品发布会" data-score="7.0" data-cover="http://img3.moretv.com.cn/t1.baidu.com/it/u=2696281110,1467252207&fm=20" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t1.baidu.com/it/u=2696281110,1467252207&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">锤子科技新品发布会</div>
+              <div class="info">坚果手机发布</div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="21652" data-name="小米发布会视频合集" data-score="7.0" data-cover="http://img3.moretv.com.cn/attach.bbs.miui.com/forum/201408/13/161630l9p5teotrcp9h1ch.jpg" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/attach.bbs.miui.com/forum/201408/13/161630l9p5teotrcp9h1ch.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">小米发布会视频合集</div>
+              <div class="info"></div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="21333" data-name="乐视生态发布会" data-score="7.0" data-cover="http://img3.moretv.com.cn/i2.letvimg.com/lc03_isvrs/201504/13/18/57/b804ec6d-5cc5-40df-a8eb-8dfd61905e5c.jpg" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/i2.letvimg.com/lc03_isvrs/201504/13/18/57/b804ec6d-5cc5-40df-a8eb-8dfd61905e5c.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">乐视生态发布会</div>
+              <div class="info">乐视科技生态系统</div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="21738" data-name="百度世界大会" data-score="7.0" data-cover="http://img3.moretv.com.cn/t3.baidu.com/it/u=3224110777,1393973773&fm=20" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/t3.baidu.com/it/u=3224110777,1393973773&fm=20" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">百度世界大会</div>
+              <div class="info">索引真实世界</div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="22125" data-name="微软新品发布会" data-score="9.0" data-cover="http://img3.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2272872448.jpg" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2272872448.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">微软新品发布会</div>
+              <div class="info">酷炫狂拽屌炸天</div>
+              <div class="score">9.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="22126" data-name="特斯拉Tesla Model X发布会" data-score="9.0" data-cover="http://img3.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2272877376.jpg" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img4.douban.com/view/photo/photo/public/p2272877376.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">特斯拉Tesla Model X发布会</div>
+              <div class="info">开车泡美女请点这里</div>
+              <div class="score">9.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="21410" data-name="360奇酷手机发布会全程" data-score="7.0" data-cover="http://img3.moretv.com.cn/img1.imgtn.bdimg.com/it/u=1959162068,1707288017&fm=21&gp=0.jpg" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img1.imgtn.bdimg.com/it/u=1959162068,1707288017&fm=21&gp=0.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">360奇酷手机发布会全程</div>
+              <div class="info">360奇酷手机发布会全剖析</div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="22435" data-name="汪峰FIIL耳机发布会" data-score="7.0" data-cover="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2276697540.jpg" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/img3.douban.com/view/photo/photo/public/p2276697540.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">汪峰FIIL耳机发布会</div>
+              <div class="info"></div>
+              <div class="score">7.0分</div>
+            </a>
+            <a href="javascript:void(0);" class="video-item" data-video-id="21763" data-name="苹果新品发布会" data-score="9.5" data-cover="http://img3.moretv.com.cn/pic0.qiyipic.com/image/20150829/81/1b/a_100014774_m_601_195_260.jpg" data-runtime="" data-year="2015">
+              <img class="lazy-pic" data-pic="http://img3.moretv.com.cn/pic0.qiyipic.com/image/20150829/81/1b/a_100014774_m_601_195_260.jpg" src="http://static.jinerkan.com/m/hd/v3/client/dist/styles/img/holder.png">
+              <div class="title">苹果新品发布会</div>
+              <div class="info">苹果最新产品看点</div>
+              <div class="score">9.5分</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    seajs.config({
+      // base: "/static/m/hd/v3/client/dist/scripts",
+      base: 'http://static.jinerkan.com/m/hd/v3/client/dist/scripts',
+      map: [
+        [/^(.*\.js)(.*)$/i, '$1?v=16011501']
+      ]
+    });
+    seajs.use('pages/index');
+  </script>
+  <script>
+    var hostname = location.hostname,
+      isLocal = hostname == '10.88.0.111' || hostname == '10.88.0.110',
+      isDev = hostname.indexOf('dev') !== -1,
+      uID = getCookie('xy_d_id');
+
+    //获取cookie
+    function getCookie(name) {
+
+      var strCookie = document.cookie;
+
+      var arrCookie = strCookie.split("; ");
+
+      for (var i = 0; i < arrCookie.length; i++) {
+
+        var arr = arrCookie[i].split("=");
+
+        if (arr[0] == name) return arr[1];
+
+      }
+
+      return "";
+    }
+
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+          if (!isLocal && !isDev) {
+            (i[r].q = i[r].q || []).push(arguments);
+          } else {
+
+          }
+        },
+        i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-59775256-1', {
+      'userId': uID
+    });
+  </script>
+  <!-- <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"e6ad45dd9d","applicationID":"8461775","transactionName":"YV1TMRMFWRBSUEwKDVgXcAYVDVgNHFddBQNDVEU=","queueTime":0,"applicationTime":2096,"atts":"TRpQR1sfSh4=","errorBeacon":"bam.nr-data.net","agent":"js-agent.newrelic.com\/nr-768.min.js"}</script></body> -->
+
+  <body>
+
+</html>
